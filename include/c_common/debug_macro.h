@@ -1,5 +1,6 @@
 /*PGR-GNU*****************************************************************
-File: pgr_palloc.cpp
+
+File: debug_macro.h
 
 Copyright (c) 2015 Celia Virginia Vergara Castillo
 Mail: vicky_vergara@hotmail.com
@@ -22,16 +23,18 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
-#include "cpp_common/pgr_alloc.hpp"
-#include <cstring>
-#include <string>
+#ifndef INCLUDE_C_COMMON_DEBUG_MACRO_H_
+#define INCLUDE_C_COMMON_DEBUG_MACRO_H_
+#pragma once
 
-char *
-pgr_msg(const std::string &msg) {
-    char* duplicate = NULL;
-    duplicate = pgr_alloc(msg.size() + 1, duplicate);
-    memcpy(duplicate, msg.c_str(), msg.size());
-    duplicate[msg.size()] = '\0';
-    return duplicate;
-}
+#ifndef NDEBUG
 
+#include "c_common/postgres_connection.h"
+
+#define PGR_DBG(...) \
+    elog(DEBUG3, __VA_ARGS__)
+#else
+#define PGR_DBG(...) do { ; } while (0)
+#endif
+
+#endif  // INCLUDE_C_COMMON_DEBUG_MACRO_H_
