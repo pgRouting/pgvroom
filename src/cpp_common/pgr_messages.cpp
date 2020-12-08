@@ -1,10 +1,9 @@
 /*PGR-GNU*****************************************************************
 
+FILE: pgr_pickDeliver.h
+
 Copyright (c) 2015 pgRouting developers
 Mail: project@pgrouting.org
-
-Copyright (c) 2020 Mohamed Bakli, Esteban Zimányi, Mahmoud Sakr
-mohamed_bakli@ulb.ac.be, estebanzimanyi@gmail.com, m_attia_sakr@yahoo.com
 
 ------
 
@@ -24,45 +23,61 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
-#ifndef INCLUDE_CPP_COMMON_INTERRUPTION_H_
-#define INCLUDE_CPP_COMMON_INTERRUPTION_H_
-/*
- * Suppress the -Wpedantic warning temporarily about the postgres file
- */
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wpedantic"
-#pragma clang diagnostic ignored "-Wignored-attributes"
-#else
-#ifdef __GNUC__
-#if __GNUC__ > 5
-#pragma GCC diagnostic ignored "-Wpedantic"
-#else
-#pragma GCC diagnostic ignored "-pedantic"
-#endif
-#endif
-#endif
 
-#ifdef __MSVC__
-#pragma warning(disable : 4200)
-#endif
+#include <string>
+#include <sstream>
+#include "cpp_common/pgr_messages.h"
 
-extern "C" {
-#include <postgres.h>
-#include <miscadmin.h>
+namespace pgrouting {
+
+
+
+std::string
+Pgr_messages::get_log() const {
+    auto str = log.str();
+    return str;
 }
 
-#ifdef __clang__
-#pragma clang diagnostic pop
-#else
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif
+std::string
+Pgr_messages::get_notice() const {
+    auto str = notice.str();
+    return str;
+}
+
+bool
+Pgr_messages::has_error() const {
+    return  !error.str().empty();
+}
+
+std::string
+Pgr_messages::get_error() const {
+    auto str = error.str();
+    return str;
+}
+
+#ifndef NDEBUG
+std::string
+Pgr_messages::get_dbglog() const {
+    return dbg_log.str();
+}
 #endif
 
+void
+Pgr_messages::clear() {
+    log.str("");
+    log.clear();
 
-#ifdef __MSVC__
-#pragma warning(default : 4200)
+    notice.str("");
+    notice.clear();
+
+    error.str("");
+    error.clear();
+
+#ifndef NDEBUG
+    dbg_log.str("");
+    dbg_log.clear();
 #endif
+}
 
-#endif  // INCLUDE_CPP_COMMON_INTERRUPTION_H_
+
+}  //  namespace pgrouting
