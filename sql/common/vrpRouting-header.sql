@@ -1,6 +1,6 @@
 /*PGR-GNU*****************************************************************
 
-FILE: pgr_pickDeliver.h
+FILE: __FILENAME__
 
 Copyright (c) 2015 pgRouting developers
 Mail: project@pgrouting.org
@@ -22,50 +22,6 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
+\echo Use "CREATE EXTENSION vrprouting" to load this file. \quit
 
 
-#include <string>
-#include <sstream>
-#include "cpp_common/pgr_messages.h"
-
-namespace pgrouting {
-
-
-
-std::string
-Pgr_messages::get_log() const {
-    auto str = log.str();
-    return str;
-}
-
-std::string
-Pgr_messages::get_notice() const {
-    auto str = notice.str();
-    return str;
-}
-
-bool
-Pgr_messages::has_error() const {
-    return  !error.str().empty();
-}
-
-std::string
-Pgr_messages::get_error() const {
-    auto str = error.str();
-    return str;
-}
-
-void
-Pgr_messages::clear() {
-    log.str("");
-    log.clear();
-
-    notice.str("");
-    notice.clear();
-
-    error.str("");
-    error.clear();
-}
-
-
-}  //  namespace pgrouting
