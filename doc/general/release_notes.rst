@@ -15,19 +15,30 @@
   (`v0 <https://vrp.pgrouting.org/v0/en/release_notes.html>`__)
 
 Release Notes
--------------------------------------------------------------------------------
+===============================================================================
 
-To see the full list of changes check the list of `Git commits <https://github.com/pgRouting/vrprouting/commits>`_ on Github.
+To see the full list of changes check the list of `Git commits
+<https://github.com/pgRouting/vrprouting/commits>`_ on Github.
 
-.. contents:: Contents
-     :local:
+.. contents:: Mayors
+   :local:
+   :depth: 1
 
-v0.2.0 Release Notes
+vrpRouting 0
 *******************************************************************************
 
-.. rubric:: New experimental functions
+.. contents:: Minors 0.x
+   :local:
+   :depth: 1
 
-- VROOM
+vrpRouting 0.1
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. rubric:: Extraction tasks
+
+- Porting vrpRouting's VROMM functionality
+
+- VROOM 1.12.0
 
   - vrp_vroom
   - vrp_vroomJobs
@@ -35,15 +46,5 @@ v0.2.0 Release Notes
   - vrp_vroomPlain
   - vrp_vroomJobsPlain
   - vrp_vroomShipmentsPlain
-
-v0.1.0 Release Notes
-*******************************************************************************
-
-.. rubric:: Extraction tasks
-
-- Porting pgRouting's VRP functionality
-
-.. rubric:: New official functions
-
-* vrp_version
-* vrp_full_version
+  - vrp_version
+  - vrp_full_version
