@@ -21,7 +21,7 @@ vrpRouting is a `PostgreSQL <https://www.postgresql.org>`__ extension that exten
 of `pgRouting <https://pgrouting.org>`__ extension, by adding solutions to several
 Vehicle Routing Problems.
 
-The project is supported and manatianed by `Georepublic <https://georepublic.info>`__,
+The project is supported and manatianed by
 `Paragon Corporation <https://www.paragoncorporation.com/>`__ and a broad user community.
 
 vrpRouting is a subproduct of `pgRouting <https://pgrouting.org>`__  organization which is an
@@ -60,9 +60,9 @@ Individuals (in alphabetical order)
 
   - Adding new experimental VROOM category functions: vrp_vroom, vrp_vroomJobs, vrp_vroomShipments.
 
-- Manas Sivakumar
+- Joseph Percival
 
-  - Adding Google Or tools functionality to vrprouting
+  - Optimized and added several VRP functions, including: tabu, pickDeliver, pickDeliver_driver, and many others.
 
 - Virginia Vergara
 
@@ -77,8 +77,6 @@ Corporate Sponsors (in alphabetical order)
 
 These are corporate entities that have contributed developer time, hosting, or direct monetary funding to the vrpRouting project:
 
-- `Georepublic <https://georepublic.info/en/>`__
-- `Leopark <https://www.leopark.mx/>`__
 - `Paragon Corporation <https://www.paragoncorporation.com/>`__
 
 Contributors Past & Present:
@@ -92,9 +90,8 @@ Individuals (in alphabetical order)
    `name <email>`__
 
 `Ashish Kumar <ashishkr23438@gmail.com>`__
-`Daniel Kastl <daniel@georepublic.de>`__
-`Vicky Vergara <vicky@georepublic.de>`__
-`Manas Sivakumar <manas23601@gmail.com>`__
+`Joseph Percival <ipercival@gmail.com>`__
+`Vicky Vergara <vicky@erosion.de>`__
 
 Corporate Sponsors (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,8 +99,6 @@ Corporate Sponsors (in alphabetical order)
 These are corporate entities that have contributed developer time, hosting, or
 direct monetary funding to the vrpRouting project:
 
-- Georepublic
-- Leopark
 - Paragon Corporation
 
 
@@ -115,4 +110,3 @@ More Information
 * PostGIS extension at the PostGIS project web site https://postgis.net.
 * pgRouting extension at the pgRouting project web site https://pgRouting.org.
 * Boost C++ source libraries at https://www.boost.org.
-

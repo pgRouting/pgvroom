@@ -81,13 +81,6 @@ contributed to the development of vrpRouting:
    * - **Company**
      - **Offices in**
      - **Website**
-   * - Georepublic
-     - Germany, Japan
-     - https://georepublic.info
    * - Paragon Corporation
      - United States
      - https://www.paragoncorporation.com
-   * - Leopark
-     - Mexico
-     - https://www.leopark.mx
-
