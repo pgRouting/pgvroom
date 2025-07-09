@@ -24,22 +24,21 @@ Vehicle Routing Problems.
 The project is supported and manatianed by
 `Paragon Corporation <https://www.paragoncorporation.com/>`__ and a broad user community.
 
-vrpRouting is a subproduct of `pgRouting <https://pgrouting.org>`__  organization which is an
-`OSGeo Community Project <https://wiki.osgeo.org/wiki/OSGeo_Community_Projects>`__.
-
-
-.. _license:
+vrpRouting is a subproduct of `pgRouting <https://pgrouting.org>`__ organization which is an
+OSGeo Project.
 
 Licensing
 -------------------------------------------------------------------------------
 
 The following licenses can be found in vrpRouting:
 
-* GNU General Public License 2 or latar, `GPL-2.0-or-later <https://spdx.org/licenses/GPL-2.0-or-later.html>`__.
+* GNU General Public License 2 or latar, `GPL-2.0-or-later
+  <https://spdx.org/licenses/GPL-2.0-or-later.html>`__.
 
   * For code in any language.
 
-* Creative Commons Attribution-Share Alike 3.0 License `CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0/>`__.
+* Creative Commons Attribution-Share Alike 3.0 License `CC BY-SA 3.0
+  <https://creativecommons.org/licenses/by-sa/3.0/>`__.
 
   * For user's & developer's documentation
 
@@ -57,24 +56,26 @@ Individuals (in alphabetical order)
 
 - Ashish Kumar
 
-  - Adding new experimental VROOM category functions: vrp_vroom, vrp_vroomJobs, vrp_vroomShipments.
-
-- Joseph Percival
-
-  - Optimized and added several VRP functions, including: tabu, pickDeliver, pickDeliver_driver, and many others.
+  - vrp_vroom
+  - vrp_vroomJobs
+  - vrp_vroomShipments
+  - vrp_vroomPlain
+  - vrp_vroomJobsPlain
+  - vrp_vroomShipmentsPlain
 
 - Virginia Vergara
 
-  - Porting the code from pgRouting
+  - Porting Basic Code from vrpRouting
 
 
-And all the people that give us a little of their time making comments, finding issues, making pull requests etc.
-
+And all the people that give us a little of their time making comments, finding
+issues, making pull requests etc.
 
 Corporate Sponsors (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These are corporate entities that have contributed developer time, hosting, or direct monetary funding to the vrpRouting project:
+These are corporate entities that have contributed developer time, hosting, or
+direct monetary funding to the vrpRouting project:
 
 - `Paragon Corporation <https://www.paragoncorporation.com/>`__
 
@@ -84,13 +85,21 @@ Contributors Past & Present:
 Individuals (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. Add your name, optionally you can add your email, one name each line, examples:
-   name
-   `name <email>`__
+- Ashish Kumar
 
-`Ashish Kumar <ashishkr23438@gmail.com>`__
-`Joseph Percival <ipercival@gmail.com>`__
-`Vicky Vergara <vicky@erosion.de>`__
+  - vrp_vroom
+  - vrp_vroomJobs
+  - vrp_vroomShipments
+  - vrp_vroomPlain
+  - vrp_vroomJobsPlain
+  - vrp_vroomShipmentsPlain
+
+- Vicky Vergara
+
+  - Porting basic code from vrpRouting
+
+- Joseph Percival
+- Regina Robe
 
 Corporate Sponsors (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -98,13 +107,14 @@ Corporate Sponsors (in alphabetical order)
 These are corporate entities that have contributed developer time, hosting, or
 direct monetary funding to the vrpRouting project:
 
-- Paragon Corporation
+- `Paragon Corporation <https://www.paragoncorporation.com/>`__
 
 
 More Information
 -------------------------------------------------------------------------------
 
-* The latest software, documentation and news items are available at the vrpRouting web site https://vrp.pgrouting.org.
+* The latest software, documentation and news items are available at the
+  vrpRouting web site https://vrp.pgrouting.org.
 * PostgreSQL database server at the PostgreSQL main site https://www.postgresql.org.
 * PostGIS extension at the PostGIS project web site https://postgis.net.
 * vrpRouting extension at the pgRouting project web site https://pgRouting.org.

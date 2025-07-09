@@ -56,8 +56,8 @@ class Identifiers {
 
     //! @name constructors
     //@{
-    Identifiers<T>() = default;
-    Identifiers<T>(const std::set<T>& data) {
+    Identifiers() = default;
+    Identifiers(const std::set<T>& data) {
         m_ids = data;
     }
 
@@ -65,7 +65,7 @@ class Identifiers {
      *
      * @params [in] number
      */
-    explicit Identifiers<T>(const size_t number) {
+    explicit Identifiers(const size_t number) {
         size_t i(0);
         std::generate_n(std::inserter(m_ids, m_ids.begin()),
                 number,
@@ -171,7 +171,7 @@ class Identifiers {
             return Identifiers<T>(result);
         }
 
-    //! \brief coumpound set INTERSECTION set
+    //! \brief compound set INTERSECTION set
     /*!
      * @param [in] other is a set of identifiers of type *Identifiers<T>*
      */
@@ -181,7 +181,7 @@ class Identifiers {
         return *this;
     }
 
-    //! \brief compund set INTERSECTION element
+    //! \brief compound set INTERSECTION element
     /*!
      * @param[in] element is an identifiers of type *T*
      */
@@ -230,7 +230,7 @@ class Identifiers {
         return *this;
     }
 
-    //! \brief compund set DIFFERENCE element
+    //! \brief compound set DIFFERENCE element
     /*!
       @param[in] element to be removed
       */

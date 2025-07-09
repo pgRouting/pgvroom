@@ -2,7 +2,7 @@
 File: postgres_connection.h
 
 Copyright (c) 2015 Celia Virginia Vergara Castillo
-vicky_vergara@hotmail.com
+vicky at erosion.dev
 
 ------
 

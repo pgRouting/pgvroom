@@ -1,7 +1,7 @@
 /*PGR-GNU*****************************************************************
 
 Copyright (c) 2017 Celia Virginia Vergara Castillo
-vicky_vergara@hotmail.com
+vicky at erosion.dev
 
 ------
 

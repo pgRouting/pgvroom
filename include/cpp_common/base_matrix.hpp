@@ -55,7 +55,7 @@ digraph structs {
  */
 class Base_Matrix {
  public:
-    /** @brief Constructs an emtpy matrix */
+    /** @brief Constructs an empty matrix */
     Base_Matrix() = default;
     /** @brief Constructs a matrix for only specific identifiers */
     Base_Matrix(const std::vector<Matrix_cell_t>&, const Identifiers<Id>&, Multiplier);

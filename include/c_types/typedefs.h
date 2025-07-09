@@ -2,7 +2,7 @@
 File: typedefs.h
 
 Copyright (c) 2017 Celia Virginia Vergara Castillo
-Mail: vicky_vergara@hotmail.com
+Mail: vicky at erosion.dev
 
 ------
 

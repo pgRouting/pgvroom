@@ -43,10 +43,6 @@ extern "C" {
 namespace vrprouting {
 
 class Info;
-class Matrix_cell_t;
-class Orders_t;
-class Vehicle_t;
-class Time_multipliers_t;
 class Vroom_break_t;
 class Vroom_job_t;
 class Vroom_matrix_t;
@@ -55,16 +51,6 @@ class Vroom_time_window_t;
 class Vroom_vehicle_t;
 
 namespace pgget {
-
-
-namespace pickdeliver {
-
-Matrix_cell_t fetch_matrix(const HeapTuple, const TupleDesc&, const std::vector<Info>&, bool);
-Orders_t fetch_orders(const HeapTuple, const TupleDesc&, const std::vector<Info>&, bool);
-Time_multipliers_t fetch_timeMultipliers(const HeapTuple, const TupleDesc&, const std::vector<Info>&, bool);
-Vehicle_t fetch_vehicles(const HeapTuple, const TupleDesc&, const std::vector<Info>&, bool);
-
-}  // namespace pickdeliver
 
 namespace vroom {
 

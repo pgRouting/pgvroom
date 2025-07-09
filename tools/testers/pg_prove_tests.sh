@@ -60,7 +60,7 @@ psql "${PGPORT[@]}" "${PGUSER[@]}" -d "${PGDATABASE}" -X -q -v ON_ERROR_STOP=1 -
 
 pg_prove --failures --quiet --recurse "${PGPORT[@]}" "${PGUSER[@]}" -d "${PGDATABASE}" ../../pgtap/
 
-# database wont be removed unless script does not fails
+# database will not be removed unless script does not fails
 if [ -n "$CLEANDB" ]; then
     dropdb --if-exists "${PGPORT[@]}" "${PGUSER[@]}" "${PGDATABASE}"
 fi

@@ -42,7 +42,7 @@ endif()
 message(STATUS "PROJECT_DOC_TARGETS = ${PROJECT_DOC_TARGETS}")
 
 #---------------------------------------------
-# LANGUAGES SETINGS
+# LANGUAGES SETTINGS
 #---------------------------------------------
 
 #---------------------------------------------

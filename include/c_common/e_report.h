@@ -3,7 +3,7 @@ File: e_report.h
 
 Function's developer:
 Copyright (c) 2016 Celia Virginia Vergara Castillo
-Mail: vicky_vergara@hotmail.com
+Mail: vicky at erosion.dev
 
 ------
 

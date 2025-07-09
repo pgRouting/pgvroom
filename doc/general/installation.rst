@@ -120,7 +120,7 @@ For user's documentation
 
 For developer's documentation
 
-* Doxygen >=  TBD
+* Doxygen >= TBD
 
 For testing:
 
@@ -137,16 +137,16 @@ Installing the compilation dependencies
 
 .. rubric:: Database dependencies
 
-This example is for PostgreSQL 13 and PostGIS 3
+This example is for PostgreSQL 18 and PostGIS 3
 
 .. code-block:: none
 
     sudo apt-get install
-        postgresql-13 \
-        postgresql-server-dev-13 \
-        postgresql-13-postgis-3 \
-        postgresql-13-postgis-3-scripts \
-        postgresql-13-pgrouting
+        postgresql-18 \
+        postgresql-server-dev-18 \
+        postgresql-18-postgis-3 \
+        postgresql-18-postgis-3-scripts \
+        postgresql-18-pgrouting
 
 
 .. rubric:: Build dependencies
@@ -320,5 +320,3 @@ See Also
 
 * :ref:`genindex`
 * :ref:`search`
-
-

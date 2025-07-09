@@ -49,11 +49,11 @@ namespace vroom {
 /** @brief N x N matrix
  *
  * - The internal data interpretation is done by the user of this class
- * - Once created do not modifiy
+ * - Once created do not modify
  */
 class Matrix {
  public:
-    /** @brief Constructs an emtpy matrix */
+    /** @brief Constructs an empty matrix */
     Matrix() = default;
     Matrix(const std::vector<Vroom_matrix_t>&, const Identifiers<Id>&, double);
 

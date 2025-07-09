@@ -14,7 +14,7 @@
   `Latest <https://vrp.pgrouting.org/latest/en/official.html>`__
   (`0 <https://vrp.pgrouting.org/v0/en/official.html>`__)
 
-Oficial functions
+Official functions
 *******************************************************************************
 
 Function Families

@@ -36,7 +36,7 @@ Experimental Functions
     - May lack documentation.
     - Documentation if any might need to be rewritten.
     - Documentation examples might need to be automatically generated.
-    - Might need a lot of feedback from the comunity.
+    - Might need a lot of feedback from the community.
     - Might depend on a proposed function of vrpRouting
     - Might depend on a deprecated function of vrpRouting
 
@@ -44,15 +44,13 @@ Experimental Functions
 
 .. rubric:: categories
 
-:doc:`pgr-category`
+:doc:`vroom-category`
 
 
 .. toctree::
   :maxdepth: 2
 
-  pgr-category
   vroom-category
-  or_tools-category
 
 .. rubric:: See Also
 

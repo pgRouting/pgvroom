@@ -52,7 +52,7 @@ function install_vroom {
 function set_cmake {
 
 : <<'END'
-    # with debuging information
+    # with debugging information
     cmake -DPROJECT_DEBUG=ON ..
 
     # with clang

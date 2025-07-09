@@ -3,7 +3,7 @@ File: e_report.c
 
 Function's developer:
 Copyright (c) 2016 Celia Virginia Vergara Castillo
-Mail: vicky_vergara@hotmail.com
+Mail: vicky at erosion.dev
 
 ------
 
@@ -40,7 +40,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *  ~~~~
  *
  * - When there is ERROR then postgreSQL takes over control
- *   - The char* messages are cleared automaticalyy with pfree.
+ *   - The char* messages are cleared automatically with pfree.
  * - When there is no error this will free the log & notice
  */
 void

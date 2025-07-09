@@ -3,7 +3,7 @@
 FILE: identifier.hpp
 
 Copyright (c) 2017 Celia Virginia Vergara Castillo
-vicky_vergara@hotmail.com
+vicky at erosion.dev
 
 ------
 
@@ -48,8 +48,8 @@ digraph structs {
 @enddot
 
  * Data comes with an identifier
- * - does not check for uniquenes of those identifiers
- *   - it is responsibility of the database mantainers to give unique identifiers
+ * - does not check for uniqueness of those identifiers
+ *   - it is responsibility of the database maintainers to give unique identifiers
 
  * Example use:
  * ~~~ {.c}

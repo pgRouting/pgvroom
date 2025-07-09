@@ -42,7 +42,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 namespace vrprouting {
 namespace pgget {
 
-/** @brief Retrives the tuples
+/** @brief Retrieves the tuples
  * @tparam Data_type Scructure of data
  * @tparam Func fetcher function
  * @param[in] sql  Query to be processed

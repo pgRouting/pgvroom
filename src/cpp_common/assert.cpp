@@ -2,7 +2,7 @@
 
 FILE: assert.cpp
 
-Copyright 2015~  Vicky Vergara <vicky_vergara@hotmail.com>
+Copyright 2015~  Vicky Vergara <vicky at erosion.dev>
 Copyright 2014 Stephen Woodbridge <woodbri@imaptools.com>
 Mail: project@pgrouting.org
 

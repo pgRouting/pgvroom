@@ -44,11 +44,6 @@ extern "C" {
 #include <map>
 #include "cpp_common/undefPostgresDefine.hpp"
 
-#include "cpp_common/matrix_cell_t.hpp"
-#include "cpp_common/orders_t.hpp"
-#include "cpp_common/time_multipliers_t.hpp"
-#include "cpp_common/vehicle_t.hpp"
-
 #include "cpp_common/vroom_break_t.hpp"
 #include "cpp_common/vroom_job_t.hpp"
 #include "cpp_common/vroom_matrix_t.hpp"
@@ -58,22 +53,6 @@ extern "C" {
 
 namespace vrprouting {
 namespace pgget {
-namespace pickdeliver {
-
-/** @brief Get the matrix */
-std::vector<Matrix_cell_t> get_matrix(const std::string&, bool);
-
-/** @brief Reads the pick-Deliver shipments for timestams and intervals*/
-std::vector<Orders_t> get_orders(const std::string&, bool, bool);
-
-/** @brief Reads the vehicles information */
-std::vector<Vehicle_t> get_vehicles(const std::string&, bool, bool, bool);
-
-/** @brief Get the time multipliers using interval*/
-std::vector<Time_multipliers_t> get_timeMultipliers(const std::string&, bool);
-
-}  // namespace pickdeliver
-
 namespace vroom {
 
 /** @brief Reads the VROOM matrix */

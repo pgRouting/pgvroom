@@ -1,9 +1,12 @@
 /*PGR-GNU*****************************************************************
+File: vroom_driver.h
 
-File: debug_macro.h
+Copyright (c) 2021 pgRouting developers
+Mail: project@pgrouting.org
 
-Copyright (c) 2015 Celia Virginia Vergara Castillo
-Mail: vicky at erosion.dev
+Function's developer:
+Copyright (c) 2021 Ashish Kumar
+Mail: ashishkr23438@gmail.com
 
 ------
 
@@ -23,15 +26,34 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
-#ifndef INCLUDE_C_COMMON_DEBUG_MACRO_H_
-#define INCLUDE_C_COMMON_DEBUG_MACRO_H_
+#ifndef INCLUDE_DRIVERS_VROOM_DRIVER_H_
+#define INCLUDE_DRIVERS_VROOM_DRIVER_H_
 #pragma once
 
-#ifndef NDEBUG
-#define PGR_DBG(...) \
-    elog(DEBUG3, __VA_ARGS__)
+#ifdef __cplusplus
+#include <cstddef>
+#include <cstdint>
+using Vroom_rt = struct Vroom_rt;
 #else
-#define PGR_DBG(...) do { ; } while (0)  // NOLINT [whitespace/newline]
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
+typedef struct Vroom_rt Vroom_rt;
 #endif
 
-#endif  // INCLUDE_C_COMMON_DEBUG_MACRO_H_
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void vrp_do_vroom(
+      char*, char*, char*, char*, char*, char*, char*, char*,
+      int32_t, int32_t, int16_t, bool,
+
+      Vroom_rt**, size_t*,
+      char**, char**, char**);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  // INCLUDE_DRIVERS_VROOM_DRIVER_H_

@@ -74,9 +74,9 @@ sub Usage {
     " --pgrouting version   - pgrouting version (default: found)\n" .
     " -psql /path/to/psql   - optional path to psql\n" .
     " -py venv              - python environment\n" .
-    " -v                    - verbose messages for small debuging\n" .
+    " -v                    - verbose messages for small debugging\n" .
     " -dbg                  - use when CMAKE_BUILD_TYPE = DEBUG\n" .
-    " -debug                - verbose messages for debuging(enter twice for more)\n" .
+    " -debug                - verbose messages for debugging(enter twice for more)\n" .
     " -debug1               - DEBUG1 messages (for timing reports)\n" .
     " -ignorenotice         - ignore NOTICE statements when reporting failures\n" .
     " -alg 'dir'            - directory to select which algorithm subdirs to test\n" .
@@ -409,7 +409,7 @@ sub createTestDB {
 
     die "
     Unsupported postgreSQL version $dbver
-    Minimum requierment is $POSGRESQL_MIN_VERSION version
+    Minimum requirement is $POSGRESQL_MIN_VERSION version
     Use -force to force the tests\n"
     unless version_greater_eq($dbver, $POSGRESQL_MIN_VERSION) or ($FORCE);
 
@@ -482,7 +482,7 @@ sub findPsql {
 }
 
 # getSharePath is complicated by the fact that on Debian we can have multiple
-# versions installed in a cluster. So we get the DB version by connectiong
+# versions installed in a cluster. So we get the DB version by connection,
 # to the port for the server we want. Then we get the share path for the
 # newest version od pg installed on the cluster. And finally we change the
 # in the path to the version of the server.

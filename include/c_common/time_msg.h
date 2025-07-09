@@ -1,9 +1,9 @@
 /*PGR-GNU*****************************************************************
 
-File: debug_macro.h
+FILE: time_msg.h
 
-Copyright (c) 2015 Celia Virginia Vergara Castillo
-Mail: vicky at erosion.dev
+Copyright (c) 2015 pgRouting developers
+Mail: project@pgrouting.org
 
 ------
 
@@ -23,15 +23,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
-#ifndef INCLUDE_C_COMMON_DEBUG_MACRO_H_
-#define INCLUDE_C_COMMON_DEBUG_MACRO_H_
+#ifndef INCLUDE_C_COMMON_TIME_MSG_H_
+#define INCLUDE_C_COMMON_TIME_MSG_H_
 #pragma once
 
-#ifndef NDEBUG
-#define PGR_DBG(...) \
-    elog(DEBUG3, __VA_ARGS__)
-#else
-#define PGR_DBG(...) do { ; } while (0)  // NOLINT [whitespace/newline]
-#endif
+#include <time.h>
+#include <stdio.h>
 
-#endif  // INCLUDE_C_COMMON_DEBUG_MACRO_H_
+void time_msg(char *msg, clock_t start_t, clock_t end_t);
+
+#endif  // INCLUDE_C_COMMON_TIME_MSG_H_

@@ -2,7 +2,7 @@
 File: matrix_cell_t.hpp
 
 Copyright (c) 2017 Celia Virginia Vergara Castillo
-Mail: vicky_vergara@hotmail.com
+Mail: vicky at erosion.dev
 
 ------
 
