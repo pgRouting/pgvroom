@@ -1,6 +1,6 @@
 /* -- q1 */
 SELECT *
-FROM vrp_vroomShipmentsPlain(
+FROM vro_vroomShipmentsPlain(
   'SELECT * FROM plain.shipments',
   'SELECT * FROM plain.shipments_time_windows',
   'SELECT * FROM plain.vehicles',
@@ -10,7 +10,7 @@ FROM vrp_vroomShipmentsPlain(
 );
 /* -- q2 */
 SELECT *
-FROM vrp_vroomShipmentsPlain(
+FROM vro_vroomShipmentsPlain(
   $shipments$
     SELECT * FROM (
       VALUES (100, 1, 4)

@@ -1,6 +1,6 @@
 /* -- q1 */
 SELECT *
-FROM vrp_vroomPlain(
+FROM vro_vroomPlain(
   'SELECT * FROM plain.jobs',
   'SELECT * FROM plain.jobs_time_windows',
   'SELECT * FROM plain.shipments',
@@ -12,7 +12,7 @@ FROM vrp_vroomPlain(
 );
 /* -- q2 */
 SELECT *
-FROM vrp_vroomPlain(
+FROM vro_vroomPlain(
   $jobs$
     SELECT * FROM (
       VALUES (1414, 2), (1515, 3)

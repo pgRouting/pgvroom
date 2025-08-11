@@ -4,7 +4,7 @@ SET client_min_messages TO NOTICE;
 SET
 /* -- q1 */
 SELECT *
-FROM vrp_vroomJobsPlain(
+FROM vro_vroomJobsPlain(
   'SELECT * FROM plain.jobs',
   'SELECT * FROM plain.jobs_time_windows',
   'SELECT * FROM plain.vehicles',
@@ -32,7 +32,7 @@ FROM vrp_vroomJobsPlain(
 
 /* -- q2 */
 SELECT *
-FROM vrp_vroomJobsPlain(
+FROM vro_vroomJobsPlain(
   $jobs$
     SELECT * FROM (
       VALUES (1414, 2), (1515, 3)

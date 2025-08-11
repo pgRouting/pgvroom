@@ -12,7 +12,7 @@ SELECT (to_timestamp(1630573200) at time zone 'UTC')::TIMESTAMP;
 
 /* -- q1 */
 SELECT *
-FROM vrp_vroomShipments(
+FROM vro_vroomShipments(
   'SELECT * FROM vroom.shipments',
   'SELECT * FROM vroom.shipments_time_windows',
   'SELECT * FROM vroom.vehicles',
@@ -41,7 +41,7 @@ FROM vrp_vroomShipments(
 
 /* -- q2 */
 SELECT *
-FROM vrp_vroomShipments(
+FROM vro_vroomShipments(
   $shipments$
     SELECT * FROM (
       VALUES (100, 1, 4)
