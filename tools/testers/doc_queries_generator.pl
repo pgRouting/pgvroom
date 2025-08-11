@@ -30,7 +30,7 @@ use vars qw/*name *dir *prune/;
 *prune  = *File::Find::prune;
 
 # TODO automatically get min requirement from CMakeLists.txt
-my $PROJECT='vrprouting';
+my $PROJECT='pgvroom';
 my $POSGRESQL_MIN_VERSION = '12';
 my $DOCUMENTATION = 0;
 my $DATA = 0;

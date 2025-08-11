@@ -11,8 +11,8 @@ pushd "${DIR}" > /dev/null || exit 1
 # copy this file into the root of your repository
 # ADJUST TO YOUR NEEDS
 
-VERSION=$(grep -Po '(?<=project\(VRPROUTING VERSION )[^;]+' CMakeLists.txt)
-echo "VRPROUTING VERSION ${VERSION}"
+VERSION=$(grep -Po '(?<=project\(PGVROOM VERSION )[^;]+' CMakeLists.txt)
+echo "PGVROOM VERSION ${VERSION}"
 
 # VROOM
 VROOMVER="1.12"
