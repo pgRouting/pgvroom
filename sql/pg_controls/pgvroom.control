@@ -1,5 +1,5 @@
-# vrpRouting Extension
-comment = 'vrpRouting Extension'
+# pgvroom Extension
+comment = 'pgvroom Extension'
 default_version = '${PROJECT_VERSION}'
 module_pathname = '${PROJECT_MODULE_PATHNAME}'
 relocatable = true

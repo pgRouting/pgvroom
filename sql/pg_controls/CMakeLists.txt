@@ -1,6 +1,6 @@
 
 SET(LOCAL_FILES
-    vrpRouting-header.sql
+    pgvroom-header.sql
     )
 
 foreach (f ${LOCAL_FILES})
