@@ -14,18 +14,18 @@ BEGIN
     RETURN;
   END IF;
 
-  -- vrp_vroomPlain
+  -- vro_vroomPlain
   RETURN QUERY
-  SELECT has_function('vrp_vroomplain');
+  SELECT has_function('vro_vroomplain');
   RETURN QUERY
-  SELECT has_function('vrp_vroomplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer']);
+  SELECT has_function('vro_vroomplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer']);
   RETURN QUERY
-  SELECT function_returns('vrp_vroomplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer'], 'setof record');
+  SELECT function_returns('vro_vroomplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer'], 'setof record');
 
   -- parameter names
   RETURN QUERY
   SELECT bag_has(
-    $$SELECT proargnames from pg_proc where proname = 'vrp_vroomplain'$$,
+    $$SELECT proargnames from pg_proc where proname = 'vro_vroomplain'$$,
     $$SELECT '{"","","","","","","","","exploration_level","timeout","seq","vehicle_seq","vehicle_id","vehicle_data","step_seq","step_type",'
               '"task_id","location_id","task_data","arrival","travel_time","setup_time","service_time","waiting_time","departure","load"}'::TEXT[]$$
   );
@@ -33,25 +33,25 @@ BEGIN
   -- parameter types
   RETURN QUERY
   SELECT set_eq(
-    $$SELECT  proallargtypes from pg_proc where proname = 'vrp_vroomplain'$$,
+    $$SELECT  proallargtypes from pg_proc where proname = 'vro_vroomplain'$$,
     $$VALUES
       ('{25,25,25,25,25,25,25,25,23,23,20,20,20,3802,20,23,20,20,3802,23,23,23,23,23,23,1016}'::OID[])
     $$
   );
 
 
-  -- vrp_vroom
+  -- vro_vroom
   RETURN QUERY
-  SELECT has_function('vrp_vroom');
+  SELECT has_function('vro_vroom');
   RETURN QUERY
-  SELECT has_function('vrp_vroom', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval']);
+  SELECT has_function('vro_vroom', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval']);
   RETURN QUERY
-  SELECT function_returns('vrp_vroom', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval'], 'setof record');
+  SELECT function_returns('vro_vroom', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval'], 'setof record');
 
   -- parameter names
   RETURN QUERY
   SELECT bag_has(
-    $$SELECT proargnames from pg_proc where proname = 'vrp_vroom'$$,
+    $$SELECT proargnames from pg_proc where proname = 'vro_vroom'$$,
     $$SELECT '{"","","","","","","","","exploration_level","timeout","seq","vehicle_seq","vehicle_id","vehicle_data","step_seq","step_type",'
               '"task_id","location_id","task_data","arrival","travel_time","setup_time","service_time","waiting_time","departure","load"}'::TEXT[]$$
   );
@@ -59,25 +59,25 @@ BEGIN
   -- parameter types
   RETURN QUERY
   SELECT set_eq(
-    $$SELECT  proallargtypes from pg_proc where proname = 'vrp_vroom'$$,
+    $$SELECT  proallargtypes from pg_proc where proname = 'vro_vroom'$$,
     $$VALUES
       ('{25,25,25,25,25,25,25,25,23,1186,20,20,20,3802,20,23,20,20,3802,1114,1186,1186,1186,1186,1114,1016}'::OID[])
     $$
   );
 
 
-  -- vrp_vroomJobsPlain
+  -- vro_vroomJobsPlain
   RETURN QUERY
-  SELECT has_function('vrp_vroomjobsplain');
+  SELECT has_function('vro_vroomjobsplain');
   RETURN QUERY
-  SELECT has_function('vrp_vroomjobsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer']);
+  SELECT has_function('vro_vroomjobsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer']);
   RETURN QUERY
-  SELECT function_returns('vrp_vroomjobsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer'], 'setof record');
+  SELECT function_returns('vro_vroomjobsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer'], 'setof record');
 
   -- parameter names
   RETURN QUERY
   SELECT bag_has(
-    $$SELECT proargnames from pg_proc where proname = 'vrp_vroomjobsplain'$$,
+    $$SELECT proargnames from pg_proc where proname = 'vro_vroomjobsplain'$$,
     $$SELECT '{"","","","","","","exploration_level","timeout","seq","vehicle_seq","vehicle_id","vehicle_data","step_seq","step_type",'
               '"task_id","location_id","task_data","arrival","travel_time","setup_time","service_time","waiting_time","departure","load"}'::TEXT[]$$
   );
@@ -85,25 +85,25 @@ BEGIN
   -- parameter types
   RETURN QUERY
   SELECT set_eq(
-    $$SELECT  proallargtypes from pg_proc where proname = 'vrp_vroomjobsplain'$$,
+    $$SELECT  proallargtypes from pg_proc where proname = 'vro_vroomjobsplain'$$,
     $$VALUES
       ('{25,25,25,25,25,25,23,23,20,20,20,3802,20,23,20,20,3802,23,23,23,23,23,23,1016}'::OID[])
     $$
   );
 
 
-  -- vrp_vroomJobs
+  -- vro_vroomJobs
   RETURN QUERY
-  SELECT has_function('vrp_vroomjobs');
+  SELECT has_function('vro_vroomjobs');
   RETURN QUERY
-  SELECT has_function('vrp_vroomjobs', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval']);
+  SELECT has_function('vro_vroomjobs', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval']);
   RETURN QUERY
-  SELECT function_returns('vrp_vroomjobs', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval'], 'setof record');
+  SELECT function_returns('vro_vroomjobs', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval'], 'setof record');
 
   -- parameter names
   RETURN QUERY
   SELECT bag_has(
-    $$SELECT proargnames from pg_proc where proname = 'vrp_vroomjobs'$$,
+    $$SELECT proargnames from pg_proc where proname = 'vro_vroomjobs'$$,
     $$SELECT '{"","","","","","","exploration_level","timeout","seq","vehicle_seq","vehicle_id","vehicle_data","step_seq","step_type",'
               '"task_id","location_id","task_data","arrival","travel_time","setup_time","service_time","waiting_time","departure","load"}'::TEXT[]$$
   );
@@ -111,25 +111,25 @@ BEGIN
   -- parameter types
   RETURN QUERY
   SELECT set_eq(
-    $$SELECT  proallargtypes from pg_proc where proname = 'vrp_vroomjobs'$$,
+    $$SELECT  proallargtypes from pg_proc where proname = 'vro_vroomjobs'$$,
     $$VALUES
       ('{25,25,25,25,25,25,23,1186,20,20,20,3802,20,23,20,20,3802,1114,1186,1186,1186,1186,1114,1016}'::OID[])
     $$
   );
 
 
-  -- vrp_vroomShipmentsPlain
+  -- vro_vroomShipmentsPlain
   RETURN QUERY
-  SELECT has_function('vrp_vroomshipmentsplain');
+  SELECT has_function('vro_vroomshipmentsplain');
   RETURN QUERY
-  SELECT has_function('vrp_vroomshipmentsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer']);
+  SELECT has_function('vro_vroomshipmentsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer']);
   RETURN QUERY
-  SELECT function_returns('vrp_vroomshipmentsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer'], 'setof record');
+  SELECT function_returns('vro_vroomshipmentsplain', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'integer'], 'setof record');
 
   -- parameter names
   RETURN QUERY
   SELECT bag_has(
-    $$SELECT proargnames from pg_proc where proname = 'vrp_vroomshipmentsplain'$$,
+    $$SELECT proargnames from pg_proc where proname = 'vro_vroomshipmentsplain'$$,
     $$SELECT '{"","","","","","","exploration_level","timeout","seq","vehicle_seq","vehicle_id","vehicle_data","step_seq","step_type",'
               '"task_id","location_id","task_data","arrival","travel_time","setup_time","service_time","waiting_time","departure","load"}'::TEXT[]$$
   );
@@ -137,25 +137,25 @@ BEGIN
   -- parameter types
   RETURN QUERY
   SELECT set_eq(
-    $$SELECT  proallargtypes from pg_proc where proname = 'vrp_vroomshipmentsplain'$$,
+    $$SELECT  proallargtypes from pg_proc where proname = 'vro_vroomshipmentsplain'$$,
     $$VALUES
       ('{25,25,25,25,25,25,23,23,20,20,20,3802,20,23,20,20,3802,23,23,23,23,23,23,1016}'::OID[])
     $$
   );
 
 
-  -- vrp_vroomShipments
+  -- vro_vroomShipments
   RETURN QUERY
-  SELECT has_function('vrp_vroomshipments');
+  SELECT has_function('vro_vroomshipments');
   RETURN QUERY
-  SELECT has_function('vrp_vroomshipments', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval']);
+  SELECT has_function('vro_vroomshipments', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval']);
   RETURN QUERY
-  SELECT function_returns('vrp_vroomshipments', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval'], 'setof record');
+  SELECT function_returns('vro_vroomshipments', ARRAY['text', 'text', 'text', 'text', 'text', 'text', 'integer', 'interval'], 'setof record');
 
   -- parameter names
   RETURN QUERY
   SELECT bag_has(
-    $$SELECT proargnames from pg_proc where proname = 'vrp_vroomshipments'$$,
+    $$SELECT proargnames from pg_proc where proname = 'vro_vroomshipments'$$,
     $$SELECT '{"","","","","","","exploration_level","timeout","seq","vehicle_seq","vehicle_id","vehicle_data","step_seq","step_type",'
               '"task_id","location_id","task_data","arrival","travel_time","setup_time","service_time","waiting_time","departure","load"}'::TEXT[]$$
   );
@@ -163,7 +163,7 @@ BEGIN
   -- parameter types
   RETURN QUERY
   SELECT set_eq(
-    $$SELECT  proallargtypes from pg_proc where proname = 'vrp_vroomshipments'$$,
+    $$SELECT  proallargtypes from pg_proc where proname = 'vro_vroomshipments'$$,
     $$VALUES
       ('{25,25,25,25,25,25,23,1186,20,20,20,3802,20,23,20,20,3802,1114,1186,1186,1186,1186,1114,1016}'::OID[])
     $$

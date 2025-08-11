@@ -47,7 +47,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -104,7 +104,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'empty_jobs',
     'jobs_time_windows',
     'empty_shipments',
@@ -121,7 +121,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -138,7 +138,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -158,7 +158,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT id, location_id, service, delivery, pickup, skills, -1 AS priority FROM jobs',
     'jobs_time_windows',
     'shipments',
@@ -180,7 +180,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT id, location_id, service, delivery, pickup, skills, 101 AS priority FROM jobs',
     'jobs_time_windows',
     'shipments',
@@ -202,7 +202,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT id, location_id, service, delivery, pickup, skills, 0 AS priority FROM jobs',
     'jobs_time_windows',
     'shipments',
@@ -219,7 +219,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT id, location_id, service, delivery, pickup, skills, 0 AS priority FROM jobs',
     'jobs_time_windows',
     'shipments',
@@ -239,7 +239,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'SELECT id, p_location_id, p_service, d_location_id, d_service,
@@ -262,7 +262,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'SELECT id, p_location_id, p_service, d_location_id, d_service,
@@ -285,7 +285,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'SELECT id, p_location_id, p_service, d_location_id, d_service,
@@ -303,7 +303,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'SELECT id, p_location_id, p_service, d_location_id, d_service,
@@ -324,7 +324,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -346,7 +346,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -363,7 +363,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -386,7 +386,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_equal_tw',
     'shipments',
@@ -403,7 +403,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_invalid_tw',
     'shipments',
@@ -431,7 +431,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -448,7 +448,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -476,7 +476,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -493,7 +493,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -523,7 +523,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -540,7 +540,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -567,7 +567,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs_only_delivery',
     'jobs_time_windows',
     'shipments',
@@ -581,7 +581,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs_only_pickup',
     'jobs_time_windows',
     'shipments',
@@ -603,7 +603,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -617,7 +617,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -638,7 +638,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -672,7 +672,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs_inconsistent_delivery',
     'jobs_time_windows',
     'shipments',
@@ -686,7 +686,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs_inconsistent_pickup',
     'jobs_time_windows',
     'shipments',
@@ -700,7 +700,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments_inconsistent_amount',
@@ -714,7 +714,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -777,7 +777,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -791,7 +791,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -817,7 +817,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT * FROM jobs WHERE id = 1',
     'jobs_time_windows',
     'empty_shipments',
@@ -845,7 +845,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT * FROM jobs WHERE id = 5',
     'jobs_time_windows',
     'empty_shipments',
@@ -873,7 +873,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'empty_jobs',
     'jobs_time_windows',
     'SELECT * FROM shipments WHERE id = 1',
@@ -902,7 +902,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'empty_jobs',
     'jobs_time_windows',
     'SELECT * FROM shipments WHERE id = 5',
@@ -931,7 +931,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT * FROM jobs WHERE id = 2',
     'jobs_time_windows',
     'SELECT * FROM shipments WHERE id = 2',
@@ -965,7 +965,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -988,7 +988,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1011,7 +1011,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1062,7 +1062,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1081,7 +1081,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1128,7 +1128,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1155,7 +1155,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1177,7 +1177,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1215,7 +1215,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1269,7 +1269,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT id, location_id, service, delivery, pickup, ARRAY[]::INTEGER[]::INTEGER[]::INTEGER[]::INTEGER[] AS skills, priority FROM jobs',
     'jobs_time_windows',
     'SELECT id, p_location_id, p_service, d_location_id, d_service, amount, ARRAY[]::INTEGER[]::INTEGER[]::INTEGER[]::INTEGER[] AS skills, priority FROM shipments',
@@ -1287,7 +1287,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'SELECT id, location_id, service, delivery, pickup, ARRAY[]::INTEGER[]::INTEGER[]::INTEGER[]::INTEGER[] AS skills, priority FROM jobs',
     'jobs_time_windows',
     'SELECT id, p_location_id, p_service, d_location_id, d_service, amount, ARRAY[]::INTEGER[]::INTEGER[]::INTEGER[]::INTEGER[] AS skills, priority FROM shipments',
@@ -1305,7 +1305,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1327,7 +1327,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1350,7 +1350,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',
@@ -1373,7 +1373,7 @@ BEGIN
   SELECT
     seq, vehicle_seq, vehicle_id, step_seq, step_type, task_id,
     arrival, travel_time, service_time, waiting_time, departure, load
-  FROM vrp_vroomPlain(
+  FROM vro_vroomPlain(
     'jobs',
     'jobs_time_windows',
     'shipments',

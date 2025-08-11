@@ -3,7 +3,7 @@ BEGIN;
 SELECT plan (3504);
 
 /*
-SELECT * FROM vrp_vroomPlain(
+SELECT * FROM vro_vroomPlain(
   $$SELECT id, location_id, service, delivery, pickup, skills, priority FROM jobs$$,
   $$SELECT id, tw_open, tw_close FROM jobs_time_windows$$,
   $$SELECT id, p_location_id, p_service, d_location_id, d_service, amount, skills, priority FROM shipments$$,
@@ -323,13 +323,13 @@ DECLARE
   inner_query_table TEXT;
 BEGIN
 
-  -- vrp_vroom
+  -- vro_vroom
 
   IF is_plain = TRUE THEN
-    fn := 'vrp_vroomPlain';
+    fn := 'vro_vroomPlain';
     SET search_path TO 'plain', 'public';
   ELSE
-    fn := 'vrp_vroom';
+    fn := 'vro_vroom';
     SET search_path TO 'vroom', 'public';
   END IF;
   start_sql := '';
@@ -382,12 +382,12 @@ BEGIN
   RETURN QUERY SELECT inner_query_matrix(fn, start_sql, rest_sql, is_plain);
 
 
-  -- vrp_vroomJobs
+  -- vro_vroomJobs
 
   IF is_plain = TRUE THEN
-    fn := 'vrp_vroomJobsPlain';
+    fn := 'vro_vroomJobsPlain';
   ELSE
-    fn := 'vrp_vroomJobs';
+    fn := 'vro_vroomJobs';
   END IF;
   start_sql := '';
   rest_sql := ', $$SELECT * FROM jobs_time_windows$$, $$SELECT * FROM vehicles$$, $$SELECT * FROM breaks$$, ' ||
@@ -422,12 +422,12 @@ BEGIN
   RETURN QUERY SELECT inner_query_matrix(fn, start_sql, rest_sql, is_plain);
 
 
-  -- vrp_vroomShipments
+  -- vro_vroomShipments
 
   IF is_plain = TRUE THEN
-    fn := 'vrp_vroomShipmentsPlain';
+    fn := 'vro_vroomShipmentsPlain';
   ELSE
-    fn := 'vrp_vroomShipments';
+    fn := 'vro_vroomShipments';
   END IF;
   start_sql := '';
   rest_sql := ', $$SELECT * FROM shipments_time_windows$$, $$SELECT * FROM vehicles$$, $$SELECT * FROM breaks$$, ' ||

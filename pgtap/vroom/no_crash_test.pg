@@ -85,10 +85,10 @@ BEGIN
 
   IF is_plain = TRUE THEN
     params[10] = 'timeout => -1';
-    RETURN query SELECT * FROM no_crash_test('vrp_vroomPlain', params, subs, error_messages, non_empty_args);
+    RETURN query SELECT * FROM no_crash_test('vro_vroomPlain', params, subs, error_messages, non_empty_args);
   ELSE
     params[10] = 'timeout => $$-00:00:01$$::INTERVAL';
-    RETURN query SELECT * FROM no_crash_test('vrp_vroom', params, subs, error_messages, non_empty_args);
+    RETURN query SELECT * FROM no_crash_test('vro_vroom', params, subs, error_messages, non_empty_args);
   END IF;
 
   params = ARRAY[
@@ -125,10 +125,10 @@ BEGIN
 
   IF is_plain = TRUE THEN
     params[8] = 'timeout => -1';
-    RETURN query SELECT * FROM no_crash_test('vrp_vroomJobsPlain', params, subs, error_messages, non_empty_args);
+    RETURN query SELECT * FROM no_crash_test('vro_vroomJobsPlain', params, subs, error_messages, non_empty_args);
   ELSE
     params[8] = 'timeout => $$-00:00:01$$::INTERVAL';
-    RETURN query SELECT * FROM no_crash_test('vrp_vroomJobs', params, subs, error_messages, non_empty_args);
+    RETURN query SELECT * FROM no_crash_test('vro_vroomJobs', params, subs, error_messages, non_empty_args);
   END IF;
 
   params = ARRAY[
@@ -165,10 +165,10 @@ BEGIN
 
   IF is_plain = TRUE THEN
     params[8] = 'timeout => -1';
-    RETURN query SELECT * FROM no_crash_test('vrp_vroomShipmentsPlain', params, subs, error_messages, non_empty_args);
+    RETURN query SELECT * FROM no_crash_test('vro_vroomShipmentsPlain', params, subs, error_messages, non_empty_args);
   ELSE
     params[8] = 'timeout => $$-00:00:01$$::INTERVAL';
-    RETURN query SELECT * FROM no_crash_test('vrp_vroomShipments', params, subs, error_messages, non_empty_args);
+    RETURN query SELECT * FROM no_crash_test('vro_vroomShipments', params, subs, error_messages, non_empty_args);
   END IF;
 
   DEALLOCATE ALL;
