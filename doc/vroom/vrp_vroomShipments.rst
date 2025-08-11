@@ -9,31 +9,17 @@
 
 |
 
-* `Documentation <https://vrp.pgrouting.org/>`__ → `vrpRouting v0 <https://vrp.pgrouting.org/v0>`__
-* Supported Versions
-  `Latest <https://vrp.pgrouting.org/latest/en/vrp_vroomShipments.html>`__
-  (`v0 <https://vrp.pgrouting.org/v0/en/vrp_vroomShipments.html>`__)
-
-
 vrp_vroomShipments - Experimental
 ===============================================================================
 
 ``vrp_vroomShipments`` - Vehicle Routing Problem with VROOM, involving only shipments.
 
-.. include:: experimental.rst
-   :start-after: begin-warn-expr
-   :end-before: end-warn-expr
-
 .. rubric:: Availability
 
-Version 0.3.0
+.. rubric:: Version 0.1.0
 
-* Function **modified** for VROOM 1.11.0
-
-Version 0.2.0
-
-* New **experimental** function
-
+* New function
+* Function for VROOM 1.12.0
 
 Description
 -------------------------------------------------------------------------------
@@ -174,10 +160,10 @@ and with a shipment.
 See Also
 -------------------------------------------------------------------------------
 
-* :doc:`vroom-category`
+* :doc:`concepts`
 * The queries use the :doc:`sampledata` network.
 
-.. include:: vroom-category.rst
+.. include:: concepts.rst
    :start-after: see_also_start
    :end-before: see_also_end
 

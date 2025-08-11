@@ -1,5 +1,5 @@
 
-option(BUILD_DOXY "Set ON|OFF (default=OFF) to build Developers Documentation" OFF)
+option(BUILD_DOXY "Set ON|OFF (default=ON) to build Developers Documentation" ON)
 
 if (BUILD_DOXY)
   message(STATUS "Developers documentation.")

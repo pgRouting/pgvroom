@@ -261,8 +261,13 @@ endif()
 # Add the VROOM library and dependencies
 #-------------------
 
+option(DOC_ONLY "Set to ON to build only the documentation" OFF)
 if(NOT VROOM_INSTALL_PATH)
-  message(FATAL_ERROR "VROOM installation path not specified. Please specify the vroom root directory in -DVROOM_INSTALL_PATH")
+  if (DOC_ONLY)
+    message(WARNING "VROOM installation path not specified. will build only documentation if possible")
+  else()
+    message(FATAL_ERROR "VROOM installation path not specified. Please specify the vroom root directory in -DVROOM_INSTALL_PATH")
+  endif()
 endif()
 
 message(STATUS "VROOM_INSTALL_PATH ${VROOM_INSTALL_PATH}")

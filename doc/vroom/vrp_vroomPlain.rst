@@ -9,32 +9,18 @@
 
 |
 
-* `Documentation <https://vrp.pgrouting.org/>`__ → `vrpRouting v0 <https://vrp.pgrouting.org/v0>`__
-* Supported Versions
-  `Latest <https://vrp.pgrouting.org/latest/en/vrp_vroomPlain.html>`__
-  (`v0 <https://vrp.pgrouting.org/v0/en/vrp_vroomPlain.html>`__)
-
-
 vrp_vroomPlain - Experimental
 ===============================================================================
 
 ``vrp_vroomPlain`` - Vehicle Routing Problem with VROOM, involving both jobs and
 shipments, with plain integer values instead of TIMESTAMP or INTERVAL.
 
-.. include:: experimental.rst
-   :start-after: begin-warn-expr
-   :end-before: end-warn-expr
-
 .. rubric:: Availability
 
-Version 0.3.0
+.. rubric:: Version 0.1.0
 
-* Function **modified** for VROOM 1.11.0
-
-Version 0.2.0
-
-* New **experimental** function
-
+* New function
+* Function for VROOM 1.12.0
 
 Description
 -------------------------------------------------------------------------------
@@ -187,10 +173,10 @@ Problem involving 2 jobs and 1 shipment, using a single vehicle, similar to the 
 See Also
 -------------------------------------------------------------------------------
 
-* :doc:`vroom-category`
+* :doc:`concepts`
 * The queries use the :doc:`sampledata` network.
 
-.. include:: vroom-category.rst
+.. include:: concepts.rst
    :start-after: see_also_start
    :end-before: see_also_end
 

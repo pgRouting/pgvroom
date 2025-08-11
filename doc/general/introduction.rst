@@ -1,48 +1,55 @@
 ..
    ****************************************************************************
-    vrpRouting Manual
-    Copyright(c) vrpRouting Contributors
+   pgORpy Manual
+   Copyright(c) pgORpy Contributors
 
-    This documentation is licensed under a Creative Commons Attribution-Share
-    Alike 3.0 License: https://creativecommons.org/licenses/by-sa/3.0/
+   This documentation is licensed under a Creative Commons Attribution-Share
+   Alike 3.0 License: https://creativecommons.org/licenses/by-sa/3.0/
    ****************************************************************************
 
 |
 
-* `Documentation <https://vrp.pgrouting.org/>`__ → `vrpRouting v0 <https://vrp.pgrouting.org/v0>`__
-* Supported Versions
-  `Latest <https://vrp.pgrouting.org/latest/en/introduction.html>`__
-  (`v0 <https://vrp.pgrouting.org/v0/en/introduction.html>`__)
 
 Introduction
 ===============================================================================
 
-vrpRouting is a `PostgreSQL <https://www.postgresql.org>`__ extension that extends
-of `pgRouting <https://pgrouting.org>`__ extension, by adding solutions to several
-Vehicle Routing Problems.
+pgORpy is a `PostgreSQL <https://www.postgresql.org>`__ extension that connects
+'OR-tools <https://developers.google.com/optimization>' to the database.
 
-The project is supported and manatianed by
-`Paragon Corporation <https://www.paragoncorporation.com/>`__ and a broad user community.
+The project is supported and maintained by
 
-vrpRouting is a subproduct of `pgRouting <https://pgrouting.org>`__ organization which is an
-OSGeo Project.
+- `Paragon Corporation <https://www.paragoncorporation.com/>`__
+- `erosion <https://www.erosion.dev/>`__
 
-Licensing
+and a broad user community.
+
+pgORpy is a sub product of `pgRouting organization <https://pgrouting.org>`__
+organization.
+
+License
 -------------------------------------------------------------------------------
 
-The following licenses can be found in vrpRouting:
+The following licenses can be found in pgORpy:
 
-* GNU General Public License 2 or latar, `GPL-2.0-or-later
-  <https://spdx.org/licenses/GPL-2.0-or-later.html>`__.
+.. list-table::
+   :widths: 250 500
 
-  * For code in any language.
+   * - **License**
+     -
+   * - GNU General Public License v2.0 or later
+     - Most features of pgORpy are available under GNU General Public License
+       v2.0 or later `GPL-2.0-or-later
+       <https://spdx.org/licenses/GPL-2.0-or-later.html>`__.
+   * - BSD 2-Clause "Simplified" License
+     - VROOM is under `BSD 2-Clause "Simplified" License
+       <https://github.com/VROOM-Project/vroom/blob/master/LICENSE>`__
+   * - Creative Commons Attribution-Share Alike 3.0 License
+     - The pgORpy Manual and examples is licensed under a `Creative Commons
+       Attribution-Share Alike 3.0 License
+       <https://creativecommons.org/licenses/by-sa/3.0/>`_.
 
-* Creative Commons Attribution-Share Alike 3.0 License `CC BY-SA 3.0
-  <https://creativecommons.org/licenses/by-sa/3.0/>`__.
 
-  * For user's & developer's documentation
-
-In general license information should be included in the header of each source file.
+In general license information is included in the header of each source file.
 
 
 Contributors
@@ -67,7 +74,6 @@ Individuals (in alphabetical order)
 
   - Porting Basic Code from vrpRouting
 
-
 And all the people that give us a little of their time making comments, finding
 issues, making pull requests etc.
 
@@ -75,14 +81,15 @@ Corporate Sponsors (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These are corporate entities that have contributed developer time, hosting, or
-direct monetary funding to the vrpRouting project:
+direct monetary funding to the pgvroom project:
 
+- `Erosion developers <https://www.erosion.dev/>`__
 - `Paragon Corporation <https://www.paragoncorporation.com/>`__
 
 Contributors Past & Present:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Individuals (in alphabetical order)
+Individuals past & present (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Ashish Kumar
@@ -101,20 +108,22 @@ Individuals (in alphabetical order)
 - Joseph Percival
 - Regina Robe
 
-Corporate Sponsors (in alphabetical order)
+Corporate Sponsors past & present (in alphabetical order)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These are corporate entities that have contributed developer time, hosting, or
-direct monetary funding to the vrpRouting project:
+direct monetary funding to the pgvroom project:
 
-- `Paragon Corporation <https://www.paragoncorporation.com/>`__
+- Erosion developers
+- Paragon Corporation
 
 
 More Information
 -------------------------------------------------------------------------------
 
-* The latest software, documentation and news items are available at the
-  vrpRouting web site https://vrp.pgrouting.org.
-* PostgreSQL database server at the PostgreSQL main site https://www.postgresql.org.
-* PostGIS extension at the PostGIS project web site https://postgis.net.
-* vrpRouting extension at the pgRouting project web site https://pgRouting.org.
+* The latest software, documentation and news items are available at the pgvroom
+  web site https://pgvroom.pgrouting.org.
+* PostgreSQL database server at the PostgreSQL main site
+  https://www.postgresql.org.
+* Download pgvroom extension at the pgRouting organization github
+  https://github.com/pgRouting/pgvroom

@@ -1,11 +1,13 @@
 # vrpRouting 0
 
 
+.. current
+
 vrpRouting 0.1.0
 
 **Extraction tasks**
 
-- Porting vrpRouting's VROMM functionality
+- Porting vrpRouting's VROOM functionality
 
 - VROOM 1.12.0
 

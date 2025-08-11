@@ -1,16 +1,13 @@
 
 SET(LOCAL_FILES
     concepts.rst
-    experimental.rst
     index.rst
     introduction.rst
-    official.rst
+    functions.rst
     installation.rst
-    proposed.rst
     release_notes.rst
     sampledata.rst
     support.rst
-    vroom-category.rst
     )
 
 foreach (f ${LOCAL_FILES})

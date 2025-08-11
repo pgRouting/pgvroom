@@ -19,40 +19,92 @@ Concepts
 
 .. contents::
 
-General documentation
--------------------------------------------------------------------------------
+VROOM is an open-source optimization engine that aims at providing good solutions
+to various real-life vehicle routing problems (VRP) within a small computing time.
 
-[TBD]
+VROOM can solve several well-known types of vehicle routing problems (VRP).
+
+- TSP (travelling salesman problem)
+- CVRP (capacitated VRP)
+- VRPTW (VRP with time windows)
+- MDHVRPTW (multi-depot heterogeneous vehicle VRPTW)
+- PDPTW (pickup-and-delivery problem with TW)
+
+VROOM can also solve any mix of the above problem types.
+
+.. see_also_start
+
+* `VROOM: Vehicle Routing Open-source Optimization Machine <https://github.com/VROOM-Project/vroom>`__
+* `VROOM API Documentation <https://github.com/VROOM-Project/vroom/blob/master/docs/API.md>`__
+
+.. see_also_end
 
 
 Characteristics
--------------------------------------------------------------------------------
+...............................................................................
 
-[TBD]
+VROOM models a Vehicle Routing Problem with ``vehicles``, ``jobs`` and ``shipments``.
+
+The **vehicles** denote the resources that pick and/or deliver the jobs and shipments.
+They are characterised by:
+
+- Capacity on arbitrary number of metrics
+- Skills
+- Working hours
+- Driver breaks
+- Start and end defined on a per-vehicle basis
+- Start and end can be different
+- Open trip optimization (only start or only end defined)
+
+The **jobs** denote the single-location pickup and/or delivery tasks, and the **shipments**
+denote the pickup-and-delivery tasks that should happen within the same route.
+They are characterised by:
+
+- Delivery/pickup amounts on arbitrary number of metrics
+- Service time windows
+- Service duration
+- Skills
+- Priority
+
+Terminologies
+...............................................................................
+
+- **Tasks**: Either jobs or shipments are referred to as tasks.
+- **Skills**: Every task and vehicle may have some set of skills. A task can be
+  served by only that vehicle which has all the skills of the task.
+- **Priority**: Tasks may have some priority assigned, which is useful when all
+  tasks cannot be performed due to constraints, so the tasks with low priority
+  are left unassigned.
+- **Amount (for shipment), Pickup and delivery (for job)**: They denote the
+  multidimensional quantities such as number of items, weights, volume, etc.
+- **Capacity (for vehicle)**: Every vehicle may have some capacity, denoting the
+  multidimensional quantities. A vehicle can serve only those sets of tasks such
+  that the total sum of the quantity does not exceed the vehicle capacity, at
+  any point of the route.
+- **Time Window**: An interval of time during which some activity can be
+  performed, such as working hours of the vehicle, break of the vehicle, or
+  service start time for a task.
+- **Break**: Array of time windows, denoting valid slots for the break start of
+  a vehicle.
+- **Setup time**: Setup times serve as a mean to describe the time it takes to
+  get started for a task at a given location.
+  This models a duration that should not be re-applied for other tasks following
+  at the same place.
+  So the total "action time" for a task is ``setup + service`` upon arriving at
+  a new location or ``service`` only if performing a new task at the previous
+  vehicle location.
+- **Service time**: The additional time to be spent by a vehicle while serving a
+  task.
+- **Travel time**: The total time the vehicle travels during its route.
+- **Waiting time**: The total time the vehicle is idle, i.e. it is neither
+  traveling nor servicing any task. It is generally the time spent by a vehicle
+  waiting for a task service to open.
 
 Getting Started
--------------------------------------------------------------------------------
+...............................................................................
 
 This is a simple guide to walk you through the steps of getting started
 with vrpRouting. In this guide we will cover:
-
-.. contents::
-    :local:
-
-Create a routing Database
-...............................................................................
-
-[TBD]
-
-Handling Parameters
-*******************************************************************************
-
-[TBD]
-
-Locations
-*******************************************************************************
-
-[TBD]
 
 Inner Queries
 -------------------------------------------------------------------------------
@@ -526,151 +578,6 @@ A ``SELECT`` statement that returns the following columns:
 Return columns & values
 --------------------------------------------------------------------------------
 
-Pick-Deliver result columns
-...............................................................................
-
-.. rubric:: Results
-
-.. pd_result_start
-
-Returns set of
-
-| ``seq, vehicle_number, vehicle_id, stop_seq, stop_type, stop_id, order_id, cargo,``
-| ``travel_time, arrival_time, wait_time, service_time, departure_time``
-
-.. list-table::
-   :widths: auto
-   :header-rows: 1
-
-   * - Column
-     - Type
-     - Description
-   * - ``seq``
-     - ``INTEGER``
-     -   Sequential value starting from **1**.
-   * - ``vehicle_seq``
-     - ``INTEGER``
-     - Sequential value starting from **1** for current vehicles. The
-       :math:`n_{th}` vehicle in the solution.
-   * - ``vehicle_id``
-     - ``BIGINT``
-     - Current vehicle identifier.
-   * - ``stop_seq``
-     - ``INTEGER``
-     - Sequential value starting from **1** for the stops made by the current
-       vehicle. The :math:`m_{th}` stop of the current vehicle.
-   * - ``stop_type``
-     - ``INTEGER``
-     - Kind of stop location the vehicle is at:
-
-       - ``1``: Starting location
-       - ``2``: Pickup location
-       - ``3``: Delivery location
-       - ``6``: Ending location
-   * - ``stop_id``
-     - ``BIGINT``
-     - Identifier of the stop.
-   * - ``order_id``
-     - ``BIGINT``
-     - Pickup-Delivery order pair identifier.
-
-       - ``-1``: When no order is involved on the current stop location.
-   * - ``cargo``
-     - ``BIGINT``
-     -   Cargo units of the vehicle when leaving the stop.
-   * - ``travel_time``
-     - ``BIGINT``
-     - Travel time from previous ``stop_seq`` to current ``stop_seq``.
-
-       - ``0`` When ``stop_type = 1``
-   * - ``arrival_time``
-     - ``BIGINT``
-     -   Previous ``departure_time`` plus current ``travel_time``.
-   * - ``wait_time``
-     - ``BIGINT``
-     - Time spent waiting for current `location` to open.
-   * - ``service_time``
-     - ``BIGINT``
-     - Service time at current `location`.
-   * - ``departure_time``
-     - ``BIGINT``
-     - :math:`arrival\_time + wait\_time + service\_time`.
-
-       - When ``stop_type = 6`` has the `total_time` used for the current vehicle.
-
-.. pd_result_end
-
-.. rubric:: Euclidean Results
-
-.. pde_result_start
-
-Returns set of
-
-| ``seq, vehicle_seq, vehicle_id, stop_seq, stop_type, order_id, cargo,``
-| ``travel_time, arrival_time, wait_time, service_time, departure_time``
-
-.. list-table::
-   :widths: auto
-   :header-rows: 1
-
-   * - Column
-     - Type
-     - Description
-   * - ``seq``
-     - ``INTEGER``
-     - Sequential value starting from **1**.
-   * - ``vehicle_seq``
-     - ``INTEGER``
-     - Sequential value starting from **1** for current vehicles. The
-       :math:`n_{th}` vehicle in the solution.
-   * - ``vehicle_id``
-     - ``BIGINT``
-     - Current vehicle identifier.
-   * - ``stop_seq``
-     - ``INTEGER``
-     - Sequential value starting from **1** for the stops made by the current
-       vehicle. The :math:`m_{th}` stop of the current vehicle.
-   * - ``stop_type``
-     - ``INTEGER``
-     - Kind of stop location the vehicle is at:
-
-       - ``1``: Starting location
-       - ``2``: Pickup location
-       - ``3``: Delivery location
-       - ``6``: Ending location
-   * - ``order_id``
-     - ``BIGINT``
-     - Pickup-Delivery order pair identifier.
-
-       - ``-1``: When no order is involved on the current stop location.
-   * - ``cargo``
-     - ``BIGINT``
-     -   Cargo units of the vehicle when leaving the stop.
-   * - ``travel_time``
-     - ``BIGINT``
-     - Travel time from previous ``stop_seq`` to current ``stop_seq``.
-
-       - ``0`` When ``stop_type = 1``
-   * - ``arrival_time``
-     - ``BIGINT``
-     -   Previous ``departure_time`` plus current ``travel_time``.
-   * - ``wait_time``
-     - ``BIGINT``
-     - Time spent waiting for current `location` to open.
-   * - ``service_time``
-     - ``BIGINT``
-     - Service time at current `location`.
-   * - ``departure_time``
-     - ``BIGINT``
-     - :math:`arrival\_time + wait\_time + service\_time`.
-
-       - When ``stop_type = 6`` has the `total_time` used for the current vehicle.
-
-.. pde_result_end
-
-VROOM result columns
-...............................................................................
-
 .. vroom_result_start
 
 Returns set of
@@ -773,24 +680,6 @@ Returns set of
   for the complete problem,
 
 .. vroom_result_end
-
-
-Performance
--------------------------------------------------------------------------------
-
-TBD
-
-How to contribute
--------------------------------------------------------------------------------
-
-.. rubric:: Wiki
-
-* Edit an existing  `vrpRouting Wiki <https://github.com/pgRouting/vrprouting/wiki>`_ page.
-
-
-.. rubric:: Adding Functionality to vrpRouting
-
-Consult the `developer's documentation <https://vrp.pgrouting.org/doxy/main/index.html>`_
 
 
 .. rubric:: Indices and tables
