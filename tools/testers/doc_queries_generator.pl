@@ -354,11 +354,11 @@ sub createTestDB {
 
     # Verify $PROJECT extension was installed
 
-    my $pgrv = `$psql $connopts -c "select vrp_full_version()" $DBNAME`;
+    my $pgrv = `$psql $connopts -c "select vro_full_version()" $DBNAME`;
     die "ERROR: failed to install $PROJECT into the database!\n" unless $pgrv;
 
     print `$psql $connopts -c "select version();" $DBNAME `, "\n";
-    print `$psql $connopts -c "select vrp_full_version();" $DBNAME `, "\n";
+    print `$psql $connopts -c "select vro_full_version();" $DBNAME `, "\n";
 }
 
 sub dropTestDB {

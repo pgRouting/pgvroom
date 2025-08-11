@@ -1068,7 +1068,7 @@ FROM the_matrix_info;
 
 /*
 -- To run the query (takes around 01:05 minutes)
-SELECT * FROM vrp_vroomJobsPlain(
+SELECT * FROM vro_vroomJobsPlain(
   'SELECT id, location_id, ARRAY[delivery], service FROM jobs WHERE id > 0',
   'SELECT id, tw_open, tw_close FROM jobs WHERE id > 0',
   'SELECT id, start_id, end_id, ARRAY[capacity], tw_open, tw_close FROM vehicles',

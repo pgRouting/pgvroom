@@ -8,7 +8,7 @@
 
 set -e
 
-PGDATABASE="___vrp___test___"
+PGDATABASE="___vro___test___"
 
 while [[ $# -gt 0 ]]; do
   case $1 in
