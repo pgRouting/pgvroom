@@ -69,6 +69,21 @@ if(WIN32 AND MSVC)
   set(CMAKE_CXX_FLAGS "")
 endif()
 
+#---------------------------------------------
+# Clang tidy
+#---------------------------------------------
+
+option(USE_CLANG_TIDY "Use clang-tidy." OFF)
+
+if(USE_CLANG_TIDY)
+    find_program(CLANG_TIDY_COMMAND NAMES clang-tidy NO_CACHE)
+    if (CLANG_TIDY_COMMAND)
+        set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_COMMAND};--config-file=${CMAKE_SOURCE_DIR}/.clang-tidy")
+    else()
+        message(WARNING "Set to use clang_tidy, but not found.")
+    endif()
+endif()
+
 #-----------------------------------------------------------------------------
 # C/C++ Compiler requirements
 #-----------------------------------------------------------------------------
