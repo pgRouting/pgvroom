@@ -80,9 +80,9 @@ BEGIN
       make_interval(secs => A.waiting_time),
       (to_timestamp(A.departure) at time zone 'UTC')::TIMESTAMP,
       A.load
-    FROM _vrp_vroom(_pgr_get_statement($1), _pgr_get_statement($2), NULL, NULL,
-                    _pgr_get_statement($3), _pgr_get_statement($4),
-                    _pgr_get_statement($5), _pgr_get_statement($6), exploration_level,
+    FROM _vrp_vroom(_vroom_get_statement($1), _vroom_get_statement($2), NULL, NULL,
+                    _vroom_get_statement($3), _vroom_get_statement($4),
+                    _vroom_get_statement($5), _vroom_get_statement($6), exploration_level,
                     EXTRACT(epoch FROM timeout)::INTEGER, 1::SMALLINT, false) A;
 END;
 $BODY$

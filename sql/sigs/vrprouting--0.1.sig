@@ -1,3 +1,4 @@
+_vroom_get_statement(text)
 _vrp_build_type()
 _vrp_compilation_date()
 _vrp_compiler_version()
