@@ -4,8 +4,8 @@ SET client_min_messages TO NOTICE;
 SET
 /* -- q1 */
 SELECT version, library FROM vrp_full_version();
- version |     library
----------+------------------
+ version |    library
+---------+---------------
  0.1.0   | pgvroom-0.1.0
 (1 row)
 
