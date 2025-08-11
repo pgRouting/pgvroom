@@ -72,7 +72,7 @@ Individuals (in alphabetical order)
 
 - Virginia Vergara
 
-  - Porting Basic Code from vrpRouting
+  - Porting Basic Code from pgvroom
 
 And all the people that give us a little of their time making comments, finding
 issues, making pull requests etc.
@@ -103,7 +103,7 @@ Individuals past & present (in alphabetical order)
 
 - Vicky Vergara
 
-  - Porting basic code from vrpRouting
+  - Porting basic code from pgvroom
 
 - Joseph Percival
 - Regina Robe

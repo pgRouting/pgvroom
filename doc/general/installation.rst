@@ -1,7 +1,7 @@
 ..
    ****************************************************************************
-    vrpRouting Manual
-    Copyright(c) vrpRouting Contributors
+    pgvroom Manual
+    Copyright(c) pgvroom Contributors
 
     This documentation is licensed under a Creative Commons Attribution-Share
     Alike 3.0 License: https://creativecommons.org/licenses/by-sa/3.0/
@@ -15,17 +15,17 @@ Installation
 Instructions for downloading and installing binaries for different Operative systems
 instructions and additional notes and corrections not included in this documentation
 can be found in
-`Installation wiki <https://github.com/pgRouting/vrprouting/wiki/Notes-on-Download%2C-Installation-and-building-vrpRouting>`__
+`Installation wiki <https://github.com/pgRouting/pgvroom/wiki/Notes-on-Download%2C-Installation-and-building-pgvroom>`__
 
-To use vrpRouting: PostgreSQL server, pgRouting and postGIS needs to be installed.
+To use pgvroom: PostgreSQL server, pgRouting and postGIS needs to be installed.
 
-There is no package for vrpRouting
+There is no package for pgvroom
 
-Get the vrpRouting sources
+Get the pgvroom sources
 -------------------------------------------------------------------------------
 
 
-The vrpRouting latest release can be found in https://github.com/pgRouting/vrprouting/releases/latest
+The pgvroom latest release can be found in https://github.com/pgRouting/pgvroom/releases/latest
 
 To get this release, download the repository or download the
 
@@ -33,8 +33,8 @@ To get this release, download the repository or download the
 
 .. code-block:: bash
 
-    git clone git://github.com/pgRouting/vrprouting.git
-    cd vrprouting
+    git clone git://github.com/pgRouting/pgvroom.git
+    cd pgvroom
     git checkout v${PROJECT_VERSION}
 
 
@@ -42,7 +42,7 @@ To get this release, download the repository or download the
 
 .. code-block:: bash
 
-    wget -O vrprouting-${PROJECT_VERSION}.tar.gz https://github.com/pgRouting/vrprouting/archive/v${PROJECT_VERSION}.tar.gz
+    wget -O pgvroom-${PROJECT_VERSION}.tar.gz https://github.com/pgRouting/pgvroom/archive/v${PROJECT_VERSION}.tar.gz
 
 
 Short Version
@@ -53,8 +53,8 @@ Extracting the tar ball
 
 .. code-block:: bash
 
-    tar xvfz vrprouting-${PROJECT_VERSION}.tar.gz
-    cd vrprouting-${PROJECT_VERSION}
+    tar xvfz pgvroom-${PROJECT_VERSION}.tar.gz
+    cd pgvroom-${PROJECT_VERSION}
 
 To compile assuming you have all the dependencies in your search path:
 
@@ -66,7 +66,7 @@ To compile assuming you have all the dependencies in your search path:
     make
     sudo make install
 
-Once vrpRouting is installed, it needs to be enabled in each individual database you want to use it in.
+Once pgvroom is installed, it needs to be enabled in each individual database you want to use it in.
 
 
 Enabling and upgrading in the database
@@ -74,21 +74,21 @@ Enabling and upgrading in the database
 
 .. rubric:: Enabling the database
 
-vrpRouting is an extension and depends on postGIS. Enabling postGIS before enabling vrpRouting in the database
+pgvroom is an extension and depends on postGIS. Enabling postGIS before enabling pgvroom in the database
 
 .. code-block:: sql
 
-  CREATE EXTENSION vrprouting CASCADE;
+  CREATE EXTENSION pgvroom CASCADE;
 
 
 .. rubric:: Upgrading the database
 
-When the database has an old version of vrpRouting then an upgrade is needed.
+When the database has an old version of pgvroom then an upgrade is needed.
 
 
 .. code-block:: sql
 
-   ALTER EXTENSION vrprouting UPDATE TO "${PROJECT_VERSION}";
+   ALTER EXTENSION pgvroom UPDATE TO "${PROJECT_VERSION}";
 
 
 .. rubric:: See also
@@ -102,7 +102,7 @@ Dependencies
 
 .. rubric:: Compilation Dependencies
 
-To be able to compile vrpRouting, make sure that the following dependencies are met:
+To be able to compile pgvroom, make sure that the following dependencies are met:
 
 .. TODO fill this numbers based on what is on the CMakeLists
 
@@ -197,7 +197,7 @@ For documentation and testing
 Configuring
 -------------------------
 
-vrpRouting uses the `cmake` system to do the configuration.
+pgvroom uses the `cmake` system to do the configuration.
 
 The build directory is different from the source directory
 

@@ -1,7 +1,7 @@
 ..
    ****************************************************************************
-    vrpRouting Manual
-    Copyright(c) vrpRouting Contributors
+    pgvroom Manual
+    Copyright(c) pgvroom Contributors
 
     This documentation is licensed under a Creative Commons Attribution-Share
     Alike 3.0 License: https://creativecommons.org/licenses/by-sa/3.0/
@@ -9,7 +9,7 @@
 
 |
 
-* `Documentation <https://vrp.pgrouting.org/>`__ → `vrpRouting v0 <https://vrp.pgrouting.org/v0>`__
+* `Documentation <https://vrp.pgrouting.org/>`__ → `pgvroom v0 <https://vrp.pgrouting.org/v0>`__
 * Supported Versions
   `Latest <https://vrp.pgrouting.org/latest/en/concepts.html>`__
   (`v0 <https://vrp.pgrouting.org/v0/en/concepts.html>`__)
@@ -104,7 +104,7 @@ Getting Started
 ...............................................................................
 
 This is a simple guide to walk you through the steps of getting started
-with vrpRouting. In this guide we will cover:
+with pgvroom. In this guide we will cover:
 
 Inner Queries
 -------------------------------------------------------------------------------
