@@ -61,7 +61,7 @@ sub HelpMessage {
     " --data                - only install the sampledata.\n" .
     " [-l|--level] NOTICE   - client_min_messages value. Defaults to $LEVEL. other values can be WARNING, DEBUG3, etc\n" .
     " [-c|--clean]          - dropdb before running.\n" .
-    " --documentation|doc  - Generate documentation examples. LEVEL is set to NOTICE\n" .
+    " [--documentation|--doc]  - Generate documentation examples. LEVEL is set to NOTICE\n" .
     " --help                - Show this help\n";
 }
 
@@ -89,7 +89,7 @@ my $opts = GetOptions(
     'clean' => \$CLEAN,
     'force' => \$FORCE,
     "help" => sub { HelpMessage() },
-    'documentation|doc=s' => \$DOCUMENTATION,
+    'documentation|doc' => \$DOCUMENTATION,
 );
 
 die "An option is wrong" unless $opts;
@@ -227,6 +227,7 @@ sub process_single_test{
     my $t0 = [gettimeofday];
 
     # Load the sample data & any other relevant data files
+    mysystem("$psql $connopts -q -c \"ALTER DATABASE $DBNAME SET timezone TO 'GMT'\" $DBNAME");
     mysystem("$psql $connopts -A -t -q -f tools/testers/sampledata.sql $DBNAME >> $TMP2 2>\&1 ");
 
     # QIN = queries input file
