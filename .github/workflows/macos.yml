@@ -1,0 +1,107 @@
+name: Build for macOS
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/macos.yml'
+      - 'sql/**'
+      - 'pgtap/**'
+      - 'tools/testers/**'
+      - 'CMakeLists.txt'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+    vroom: 1.12.0
+
+jobs:
+  build:
+    # disbale action, TODO Fix the macOS build for compiling and building VROOM
+    if: ${{ false }}
+    name: macos
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        release: [Debug, Release]
+        os: [macos-latest, macos-14]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          brew install postgresql@14 asio glpk rapidjson
+
+      - name: Set environment
+        shell: bash
+        run: |
+          # Building vroom fails with clang
+          echo "CC=gcc-12" >> $GITHUB_ENV;
+          echo "CXX=g++-12" >> $GITHUB_ENV;
+
+      - name: Cache VROOM
+        id: cache-vroom
+        uses: actions/cache@v4
+        env:
+          cache-name: vroom
+        with:
+          path: vroom-${{ env.vroom }}
+          key: ${{ matrix.os }}-${{ env.cache-name }}-${{ env.vroom }}
+
+      - name: Checkout VROOM
+        if: steps.cache-vroom.outputs.cache-hit != 'true'
+        uses: actions/checkout@v4
+        with:
+          path: vroom-${{ env.vroom }}
+          repository: VROOM-Project/vroom
+          ref: "v${{ env.vroom }}"
+          submodules: true
+
+      - name: Build VROOM
+        if: steps.cache-vroom.outputs.cache-hit != 'true'
+        run: |
+          cd vroom-${{ env.vroom }}/src
+          USE_ROUTING=false make shared
+
+      - name: Configure
+        run: |
+          VROOM=$(pwd)/vroom-${{ env.vroom }}
+          mkdir build
+          cd build
+          CXX=clang++ CC=clang cmake -DCMAKE_BUILD_TYPE=${{ matrix.release }}  \
+              -DVROOM_INSTALL_PATH=${VROOM} ..
+
+      - name: Build
+        run: |
+          cd build
+          make -j
+          make install
+
+      - name: Install pgTAP
+        run: |
+          git clone https://github.com/theory/pgtap.git pgTapExtension
+          cd pgTapExtension
+          make -j
+          make install
+          cpan TAP::Parser::SourceHandler::pgTAP
+          ln -s $(find `brew --prefix` -name pg_prove) symlink it into $(brew --prefix)/bin
+
+      - name: Test
+        run: |
+          export PATH=$(brew --prefix)/Cellar/perl/$(perl -e 'print substr($^V, 1)')/bin:$PATH
+          pg_ctl -D $(brew --prefix)/var/postgresql@14 start
+          createuser -s postgres
+          bash ./tools/testers/pg_prove_tests.sh -U postgres -p 5432
