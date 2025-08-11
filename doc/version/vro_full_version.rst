@@ -11,13 +11,13 @@
 
 * `Documentation <https://vrp.pgrouting.org/>`__ → `pgvroom v0 <https://vrp.pgrouting.org/v0>`__
 * Supported Versions:
-  `Latest <https://vrp.pgrouting.org/latest/en/vrp_full_version.html>`__
-  (`v0 <https://vrp.pgrouting.org/v0/en/vrp_full_version.html>`__)
+  `Latest <https://vrp.pgrouting.org/latest/en/vro_full_version.html>`__
+  (`v0 <https://vrp.pgrouting.org/v0/en/vro_full_version.html>`__)
 
-vrp_full_version
+vro_full_version
 ===============================================================================
 
-``vrp_full_version`` — Get the details of pgvroom version information.
+``vro_full_version`` — Get the details of pgvroom version information.
 
 .. rubric:: Availability
 
@@ -72,7 +72,7 @@ Column             Type       Description
 
 .. rubric:: See also
 
-* :doc:`vrp_version`
+* :doc:`vro_version`
 
 .. rubric:: Indices and tables
 

@@ -16,10 +16,10 @@ var newpages = [
     {v: '0.0', pages: [
         'concepts', 'functions', 'index', 'installation', 'introduction',
         'release_notes', 'sampledata', 'support',
-        'vrp_full_version', 'vrp_version',
-        'vrp_vroom', 'vrp_vroomPlain',
-        'vrp_vroomJobs', 'vrp_vroomJobsPlain',
-        'vrp_vroomShipments', 'vrp_vroomShipmentsPlain'
+        'vro_full_version', 'vro_version',
+        'vro_vroom', 'vro_vroomPlain',
+        'vro_vroomJobs', 'vro_vroomJobsPlain',
+        'vro_vroomShipments', 'vro_vroomShipmentsPlain'
     ] },
 ];
 

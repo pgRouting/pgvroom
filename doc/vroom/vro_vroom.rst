@@ -9,10 +9,10 @@
 
 |
 
-vrp_vroom - Experimental
+vro_vroom - Experimental
 ===============================================================================
 
-``vrp_vroom`` - Vehicle Routing Problem with VROOM, involving both jobs and shipments.
+``vro_vroom`` - Vehicle Routing Problem with VROOM, involving both jobs and shipments.
 
 .. rubric:: Availability
 
@@ -30,7 +30,7 @@ This function can be used to get the solution to a problem involving both jobs a
 shipments.
 
 .. index::
-   single: vrp_vroom -- Experimental on v0.2
+   single: vro_vroom -- Experimental on v0.2
 
 Signature
 -------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ Signature
 .. admonition:: \ \
    :class: signatures
 
-   | vrp_vroom(
+   | vro_vroom(
    | `Jobs SQL`_, `Jobs Time Windows SQL`_,
    | `Shipments SQL`_, `Shipments Time Windows SQL`_,
    | `Vehicles SQL`_,

@@ -14,6 +14,65 @@ The documentation provides very simple example queries based on a small sample n
 To be able to execute the sample queries, run the following SQL commands to create a table with a small network data set.
 
 
+VROOM Data with timestamps
+-------------------------------------------------------------------------------
+
+Jobs using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom JOBS TABLE start
+   :end-before: -- vroom JOBS TABLE end
+
+Jobs Time Windows using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom JOBS TIME WINDOWS TABLE start
+   :end-before: -- vroom JOBS TIME WINDOWS TABLE end
+
+Shipments using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom SHIPMENTS TABLE start
+   :end-before: -- vroom SHIPMENTS TABLE end
+
+Shipments Time Windows using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom SHIPMENTS TIME WINDOWS TABLE start
+   :end-before: -- vroom SHIPMENTS TIME WINDOWS TABLE end
+
+Vehicles using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom VEHICLES TABLE start
+   :end-before: -- vroom VEHICLES TABLE end
+
+Breaks using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom BREAKS TABLE start
+   :end-before: -- vroom BREAKS TABLE end
+
+Breaks Time Windows using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom BREAKS TIME WINDOWS TABLE start
+   :end-before: -- vroom BREAKS TIME WINDOWS TABLE end
+
+Matrix using timestamps
+...............................................................................
+
+.. literalinclude:: ../../tools/testers/vroomdata.sql
+   :start-after: -- vroom MATRIX TABLE start
+   :end-before: -- vroom MATRIX TABLE end
+
 VROOM Data
 -------------------------------------------------------------------------------
 
@@ -72,13 +131,3 @@ Matrix
 .. literalinclude:: ../../tools/testers/vroomdata.sql
    :start-after: -- MATRIX TABLE start
    :end-before: -- MATRIX TABLE end
-
-Modified VROOM Data
--------------------------------------------------------------------------------
-
-The tables created using the above VROOM Data are modified for the VROOM functions
-with timestamps/interval, as:
-
-.. literalinclude:: ../../docqueries/vroom/vroom.pg
-   :start-after: -- q0
-   :end-before: -- q1

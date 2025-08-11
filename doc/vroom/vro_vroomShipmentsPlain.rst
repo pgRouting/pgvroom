@@ -9,10 +9,10 @@
 
 |
 
-vrp_vroomShipmentsPlain - Experimental
+vro_vroomShipmentsPlain - Experimental
 ===============================================================================
 
-``vrp_vroomShipmentsPlain`` - Vehicle Routing Problem with VROOM, involving only
+``vro_vroomShipmentsPlain`` - Vehicle Routing Problem with VROOM, involving only
 shipments, with plain integer values instead of TIMESTAMP or INTERVAL.
 
 .. rubric:: Availability
@@ -30,7 +30,7 @@ to various real-life vehicle routing problems (VRP) within a small computing tim
 This function can be used to get the solution to a problem involving only shipments.
 
 .. index::
-   single: vrp_vroomShipmentsPlain -- Experimental on v0.2
+   single: vro_vroomShipmentsPlain -- Experimental on v0.2
 
 Signature
 -------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ Signature
 .. admonition:: \ \
    :class: signatures
 
-   | vrp_vroomShipmentsPlain(
+   | vro_vroomShipmentsPlain(
    | `Shipments SQL`_, `Shipments Time Windows SQL`_,
    | `Vehicles SQL`_,
    | `Breaks SQL`_, `Breaks Time Windows SQL`_,
@@ -59,14 +59,14 @@ Signature
 Parameters
 -------------------------------------------------------------------------------
 
-.. include:: vrp_vroomShipments.rst
+.. include:: vro_vroomShipments.rst
    :start-after: vship_parameters_start
    :end-before: vship_parameters_end
 
 Optional Parameters
 ...............................................................................
 
-.. include:: vrp_vroomPlain.rst
+.. include:: vro_vroomPlain.rst
    :start-after: vroom_plain_optionals_start
    :end-before: vroom_plain_optionals_end
 

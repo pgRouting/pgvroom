@@ -9,10 +9,10 @@
 
 |
 
-vrp_vroomJobs - Experimental
+vro_vroomJobs - Experimental
 ===============================================================================
 
-``vrp_vroomJobs`` - Vehicle Routing Problem with VROOM, involving only jobs.
+``vro_vroomJobs`` - Vehicle Routing Problem with VROOM, involving only jobs.
 
 .. rubric:: Availability
 
@@ -29,7 +29,7 @@ to various real-life vehicle routing problems (VRP) within a small computing tim
 This function can be used to get the solution to a problem involving only jobs.
 
 .. index::
-   single: vrp_vroomJobs -- Experimental on v0.2
+   single: vro_vroomJobs -- Experimental on v0.2
 
 Signature
 -------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Signature
 .. admonition:: \ \
    :class: signatures
 
-   | vrp_vroom(
+   | vro_vroom(
    | `Jobs SQL`_, `Jobs Time Windows SQL`_,
    | `Vehicles SQL`_,
    | `Breaks SQL`_, `Breaks Time Windows SQL`_,
@@ -90,7 +90,7 @@ Parameters
 Optional Parameters
 ...............................................................................
 
-.. include:: vrp_vroom.rst
+.. include:: vro_vroom.rst
    :start-after: vroom_optionals_start
    :end-before: vroom_optionals_end
 

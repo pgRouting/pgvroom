@@ -18,34 +18,34 @@ Functions
 Utilities
 -------------------------------------------------------------------------------
 
-- :doc:`vrp_version`
-- :doc:`vrp_full_version`
+- :doc:`vro_version`
+- :doc:`vro_full_version`
 
 .. toctree::
    :hidden:
 
-   vrp_version
-   vrp_full_version
+   vro_version
+   vro_full_version
 
 VROOM
 ===============================================================================
 
-- :doc:`vrp_vroom`
-- :doc:`vrp_vroomJobs`
-- :doc:`vrp_vroomShipments`
-- :doc:`vrp_vroomPlain`
-- :doc:`vrp_vroomJobsPlain`
-- :doc:`vrp_vroomShipmentsPlain`
+- :doc:`vro_vroom`
+- :doc:`vro_vroomJobs`
+- :doc:`vro_vroomShipments`
+- :doc:`vro_vroomPlain`
+- :doc:`vro_vroomJobsPlain`
+- :doc:`vro_vroomShipmentsPlain`
 
 .. toctree::
   :hidden:
 
-  vrp_vroom
-  vrp_vroomJobs
-  vrp_vroomShipments
-  vrp_vroomPlain
-  vrp_vroomJobsPlain
-  vrp_vroomShipmentsPlain
+  vro_vroom
+  vro_vroomJobs
+  vro_vroomShipments
+  vro_vroomPlain
+  vro_vroomJobsPlain
+  vro_vroomShipmentsPlain
 
 .. functions_end
 

@@ -1,7 +1,7 @@
 
 SET(LOCAL_FILES
-    vrp_version.rst
-    vrp_full_version.rst
+    vro_version.rst
+    vro_full_version.rst
     )
 
 foreach (f ${LOCAL_FILES})

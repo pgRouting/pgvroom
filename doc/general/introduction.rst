@@ -63,12 +63,12 @@ Individuals (in alphabetical order)
 
 - Ashish Kumar
 
-  - vrp_vroom
-  - vrp_vroomJobs
-  - vrp_vroomShipments
-  - vrp_vroomPlain
-  - vrp_vroomJobsPlain
-  - vrp_vroomShipmentsPlain
+  - vro_vroom
+  - vro_vroomJobs
+  - vro_vroomShipments
+  - vro_vroomPlain
+  - vro_vroomJobsPlain
+  - vro_vroomShipmentsPlain
 
 - Virginia Vergara
 
@@ -94,12 +94,12 @@ Individuals past & present (in alphabetical order)
 
 - Ashish Kumar
 
-  - vrp_vroom
-  - vrp_vroomJobs
-  - vrp_vroomShipments
-  - vrp_vroomPlain
-  - vrp_vroomJobsPlain
-  - vrp_vroomShipmentsPlain
+  - vro_vroom
+  - vro_vroomJobs
+  - vro_vroomShipments
+  - vro_vroomPlain
+  - vro_vroomJobsPlain
+  - vro_vroomShipmentsPlain
 
 - Vicky Vergara
 
