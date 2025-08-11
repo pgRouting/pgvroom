@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) pgvroom Contributors - Version 0.1
+# This file is distributed under the same license as the pgvroom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pgvroom 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 12:40-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vro_full_version"
+msgstr ""
+
+msgid "``vro_full_version`` — Get the details of pgvroom version information."
+msgstr ""
+
+msgid "Availability"
+msgstr ""
+
+msgid "Version 0.4.1"
+msgstr ""
+
+msgid "Boost removed from the result columns"
+msgstr ""
+
+msgid "Version 0.0.0"
+msgstr ""
+
+msgid "New **official** function"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Get the details of pgvroom version information"
+msgstr ""
+
+msgid "Signatures"
+msgstr ""
+
+msgid "\\ \\"
+msgstr ""
+
+msgid "pgr_full_version()"
+msgstr ""
+
+msgid "RETURNS ``(version, build_type, compile_date, library, system, PostgreSQL, compiler, hash)``"
+msgstr ""
+
+msgid "Example"
+msgstr ""
+
+msgid "Get the version installed for this documentation."
+msgstr ""
+
+msgid "Result Columns"
+msgstr ""
+
+msgid "Column"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "``version``"
+msgstr ""
+
+msgid "``TEXT``"
+msgstr ""
+
+msgid "pgvroom version"
+msgstr ""
+
+msgid "``build_type``"
+msgstr ""
+
+msgid "The Build type"
+msgstr ""
+
+msgid "``compile_date``"
+msgstr ""
+
+msgid "Compilation date"
+msgstr ""
+
+msgid "``library``"
+msgstr ""
+
+msgid "Library name and version"
+msgstr ""
+
+msgid "``system``"
+msgstr ""
+
+msgid "Operative system"
+msgstr ""
+
+msgid "``postgreSQL``"
+msgstr ""
+
+msgid "pgsql used"
+msgstr ""
+
+msgid "``compiler``"
+msgstr ""
+
+msgid "Compiler and version"
+msgstr ""
+
+msgid "``hash``"
+msgstr ""
+
+msgid "Git hash of pgvroom build"
+msgstr ""
+
+msgid "See also"
+msgstr ""
+
+msgid ":doc:`vro_version`"
+msgstr ""
+
+msgid "Indices and tables"
+msgstr ""
+
+msgid ":ref:`genindex`"
+msgstr ""
+
+msgid ":ref:`search`"
+msgstr ""
