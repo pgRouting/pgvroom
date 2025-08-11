@@ -1,12 +1,12 @@
 /* -- q1 */
 SELECT *
 FROM vrp_vroomShipmentsPlain(
-  'SELECT * FROM vroom.shipments',
-  'SELECT * FROM vroom.shipments_time_windows',
-  'SELECT * FROM vroom.vehicles',
-  'SELECT * FROM vroom.breaks',
-  'SELECT * FROM vroom.breaks_time_windows',
-  'SELECT * FROM vroom.matrix'
+  'SELECT * FROM plain.shipments',
+  'SELECT * FROM plain.shipments_time_windows',
+  'SELECT * FROM plain.vehicles',
+  'SELECT * FROM plain.breaks',
+  'SELECT * FROM plain.breaks_time_windows',
+  'SELECT * FROM plain.matrix'
 );
 /* -- q2 */
 SELECT *

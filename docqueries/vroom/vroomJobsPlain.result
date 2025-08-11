@@ -5,12 +5,12 @@ SET
 /* -- q1 */
 SELECT *
 FROM vrp_vroomJobsPlain(
-  'SELECT * FROM vroom.jobs',
-  'SELECT * FROM vroom.jobs_time_windows',
-  'SELECT * FROM vroom.vehicles',
-  'SELECT * FROM vroom.breaks',
-  'SELECT * FROM vroom.breaks_time_windows',
-  'SELECT * FROM vroom.matrix'
+  'SELECT * FROM plain.jobs',
+  'SELECT * FROM plain.jobs_time_windows',
+  'SELECT * FROM plain.vehicles',
+  'SELECT * FROM plain.breaks',
+  'SELECT * FROM plain.breaks_time_windows',
+  'SELECT * FROM plain.matrix'
 );
  seq | vehicle_seq | vehicle_id | vehicle_data | step_seq | step_type | task_id | location_id | task_data | arrival | travel_time | setup_time | service_time | waiting_time | departure | load
 -----+-------------+------------+--------------+----------+-----------+---------+-------------+-----------+---------+-------------+------------+--------------+--------------+-----------+-------
