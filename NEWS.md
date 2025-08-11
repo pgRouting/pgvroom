@@ -1,9 +1,9 @@
-# vrpRouting 0
+# pgvroom 0
 
 
 .. current
 
-vrpRouting 0.1.0
+pgvroom 0.1.0
 
 **Extraction tasks**
 

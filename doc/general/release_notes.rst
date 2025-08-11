@@ -38,7 +38,7 @@ pgvroom 0.1.0
 
 .. rubric:: Extraction tasks
 
-- Porting pgvroom's VROOM functionality
+- Porting vrpRouting's VROOM functionality
 
 - VROOM 1.12.0
 
