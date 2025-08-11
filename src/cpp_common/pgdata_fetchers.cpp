@@ -47,7 +47,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include "cpp_common/vroom_time_window_t.hpp"
 #include "cpp_common/vroom_vehicle_t.hpp"
 
-namespace vrprouting {
+namespace pgvroom {
 namespace pgget {
 
 namespace vroom {
@@ -221,4 +221,4 @@ fetch_vehicles(
 }  // namespace vroom
 
 }   // namespace pgget
-}   // namespace vrprouting
+}   // namespace pgvroom

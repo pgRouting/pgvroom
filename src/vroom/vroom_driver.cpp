@@ -73,9 +73,9 @@ vrp_do_vroom(
         char **log_msg,
         char **notice_msg,
         char **err_msg) {
-    using vrprouting::alloc;
-    using vrprouting::free;
-    using vrprouting::to_pg_msg;
+    using pgvroom::alloc;
+    using pgvroom::free;
+    using pgvroom::to_pg_msg;
 
     char* hint = nullptr;
 
@@ -83,13 +83,13 @@ vrp_do_vroom(
     std::ostringstream err;
     std::ostringstream notice;
     try {
-        using Matrix = vrprouting::vroom::Matrix;
-        using vrprouting::pgget::vroom::get_matrix;
-        using vrprouting::pgget::vroom::get_breaks;
-        using vrprouting::pgget::vroom::get_timewindows;
-        using vrprouting::pgget::vroom::get_jobs;
-        using vrprouting::pgget::vroom::get_shipments;
-        using vrprouting::pgget::vroom::get_vehicles;
+        using Matrix = pgvroom::vroom::Matrix;
+        using pgvroom::pgget::vroom::get_matrix;
+        using pgvroom::pgget::vroom::get_breaks;
+        using pgvroom::pgget::vroom::get_timewindows;
+        using pgvroom::pgget::vroom::get_jobs;
+        using pgvroom::pgget::vroom::get_shipments;
+        using pgvroom::pgget::vroom::get_vehicles;
 
         /*
          * verify preconditions
@@ -267,7 +267,7 @@ vrp_do_vroom(
             return;
         }
 
-        vrprouting::problem::Vroom problem;
+        pgvroom::problem::Vroom problem;
         problem.add_matrix(matrix);
         problem.add_vehicles(vehicles, breaks, breaks_tw);
         problem.add_jobs(jobs, jobs_tw);

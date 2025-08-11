@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #include "c_types/typedefs.h"
 
-namespace vrprouting {
+namespace pgvroom {
 
 
 /** @brief Vroom's shipment's attributes
@@ -80,6 +80,6 @@ class Vroom_shipment_t {
      std::string d_data; /** Metadata information of delivery shipment */
 };
 
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_CPP_COMMON_VROOM_SHIPMENT_T_HPP_

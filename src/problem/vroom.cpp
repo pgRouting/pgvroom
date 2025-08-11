@@ -50,7 +50,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include "cpp_common/interruption.hpp"
 #include "cpp_common/messages.hpp"
 
-namespace vrprouting {
+namespace pgvroom {
 namespace problem {
 
 /*
@@ -175,7 +175,7 @@ Vroom::add_vehicles(
  * param[in] matrix The matrix
  */
 void
-Vroom::add_matrix(const vrprouting::vroom::Matrix &matrix) {
+Vroom::add_matrix(const pgvroom::vroom::Matrix &matrix) {
     m_matrix = matrix;
 }
 
@@ -407,4 +407,4 @@ Vroom::solve(
 }
 
 }  // namespace problem
-}  // namespace vrprouting
+}  // namespace pgvroom

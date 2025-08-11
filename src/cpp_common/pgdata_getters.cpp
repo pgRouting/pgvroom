@@ -39,7 +39,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include "cpp_common/pgdata_fetchers.hpp"
 #include "cpp_common/info.hpp"
 
-namespace vrprouting {
+namespace pgvroom {
 namespace pgget {
 
 
@@ -57,12 +57,12 @@ std::vector<Vroom_matrix_t>
 get_matrix(
         const std::string &sql,
         bool use_timestamps) {
-    using vrprouting::Info;
+    using pgvroom::Info;
     std::vector<Info> info{
-        {-1, 0, true, "start_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, true, "end_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, true, "duration", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "cost", vrprouting::INTEGER}};
+        {-1, 0, true, "start_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, true, "end_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, true, "duration", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "cost", pgvroom::INTEGER}};
 
     return pgget::get_data<Vroom_matrix_t>(sql, use_timestamps, info, &fetch_matrix);
 }
@@ -81,12 +81,12 @@ get_breaks(
         const std::string &sql,
         bool use_timestamps) {
     if (sql.empty()) return std::vector<Vroom_break_t>();
-    using vrprouting::Info;
+    using pgvroom::Info;
     std::vector<Info> info{
-        {-1, 0, true, "id", vrprouting::IDX},
-        {-1, 0, true, "vehicle_id", vrprouting::IDX},
-        {-1, 0, false, "service", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "data", vrprouting::JSONB}};
+        {-1, 0, true, "id", pgvroom::IDX},
+        {-1, 0, true, "vehicle_id", pgvroom::IDX},
+        {-1, 0, false, "service", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "data", pgvroom::JSONB}};
 
     return pgget::get_data<Vroom_break_t>(sql, use_timestamps, info, &fetch_breaks);
 }
@@ -106,15 +106,15 @@ get_timewindows(
         const std::string &sql,
         bool use_timestamps,
         bool is_shipment) {
-    using vrprouting::Info;
+    using pgvroom::Info;
     std::map<std::pair<Idx, char>, std::vector<::vroom::TimeWindow>> time_windows;
     if (sql.empty()) return time_windows;
 
     std::vector<Info> info{
-        {-1, 0, true, "id", vrprouting::ANY_INTEGER},
-        {-1, 0, true, "tw_open", use_timestamps? vrprouting::TIMESTAMP : vrprouting::TTIMESTAMP},
-        {-1, 0, true, "tw_close", use_timestamps? vrprouting::TIMESTAMP : vrprouting::TTIMESTAMP},
-        {-1, 0, is_shipment, "kind", vrprouting::CHAR1}};
+        {-1, 0, true, "id", pgvroom::ANY_INTEGER},
+        {-1, 0, true, "tw_open", use_timestamps? pgvroom::TIMESTAMP : pgvroom::TTIMESTAMP},
+        {-1, 0, true, "tw_close", use_timestamps? pgvroom::TIMESTAMP : pgvroom::TTIMESTAMP},
+        {-1, 0, is_shipment, "kind", pgvroom::CHAR1}};
 
     auto data = pgget::get_data<Vroom_time_window_t>(sql, is_shipment, info, &fetch_timewindows);
 
@@ -138,17 +138,17 @@ std::vector<Vroom_job_t> get_jobs(
         const std::string &sql,
         bool use_timestamps) {
     if (sql.empty()) return std::vector<Vroom_job_t>();
-    using vrprouting::Info;
+    using pgvroom::Info;
     std::vector<Info> info {
-        {-1, 0, true, "id", vrprouting::IDX},
-        {-1, 0, true, "location_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, false, "setup",   use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "service", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "delivery", vrprouting::ANY_POSITIVE_ARRAY},
-        {-1, 0, false, "pickup", vrprouting::ANY_POSITIVE_ARRAY},
-        {-1, 0, false, "skills", vrprouting::ANY_UINT_ARRAY},
-        {-1, 0, false, "priority", vrprouting::POSITIVE_INTEGER},
-        {-1, 0, false, "data", vrprouting::JSONB}};
+        {-1, 0, true, "id", pgvroom::IDX},
+        {-1, 0, true, "location_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, false, "setup",   use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "service", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "delivery", pgvroom::ANY_POSITIVE_ARRAY},
+        {-1, 0, false, "pickup", pgvroom::ANY_POSITIVE_ARRAY},
+        {-1, 0, false, "skills", pgvroom::ANY_UINT_ARRAY},
+        {-1, 0, false, "priority", pgvroom::POSITIVE_INTEGER},
+        {-1, 0, false, "data", pgvroom::JSONB}};
 
     return pgget::get_data<Vroom_job_t>(sql, use_timestamps, info, &fetch_jobs);
 }
@@ -170,20 +170,20 @@ get_shipments(
         const std::string &sql,
         bool use_timestamps) {
     if (sql.empty()) return std::vector<Vroom_shipment_t>();
-    using vrprouting::Info;
+    using pgvroom::Info;
     std::vector<Info> info{
-        {-1, 0, true, "id", vrprouting::IDX},
-        {-1, 0, true, "p_location_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, false, "p_setup", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "p_service", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, true, "d_location_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, false, "d_setup", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "d_service", use_timestamps? vrprouting::INTERVAL : vrprouting::TINTERVAL},
-        {-1, 0, false, "amount", vrprouting::ANY_POSITIVE_ARRAY},
-        {-1, 0, false, "skills", vrprouting::ANY_UINT_ARRAY},
-        {-1, 0, false, "priority", vrprouting::POSITIVE_INTEGER},
-        {-1, 0, false, "p_data", vrprouting::JSONB},
-        {-1, 0, false, "d_data", vrprouting::JSONB}};
+        {-1, 0, true, "id", pgvroom::IDX},
+        {-1, 0, true, "p_location_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, false, "p_setup", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "p_service", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, true, "d_location_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, false, "d_setup", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "d_service", use_timestamps? pgvroom::INTERVAL : pgvroom::TINTERVAL},
+        {-1, 0, false, "amount", pgvroom::ANY_POSITIVE_ARRAY},
+        {-1, 0, false, "skills", pgvroom::ANY_UINT_ARRAY},
+        {-1, 0, false, "priority", pgvroom::POSITIVE_INTEGER},
+        {-1, 0, false, "p_data", pgvroom::JSONB},
+        {-1, 0, false, "d_data", pgvroom::JSONB}};
 
     return pgget::get_data<Vroom_shipment_t>(sql, use_timestamps, info, &fetch_shipments);
 }
@@ -203,18 +203,18 @@ std::vector<Vroom_vehicle_t>
 get_vehicles(
         const std::string &sql,
         bool use_timestamps) {
-    using vrprouting::Info;
+    using pgvroom::Info;
     std::vector<Info> info{
-        {-1, 0, true, "id", vrprouting::IDX},
-        {-1, 0, false, "start_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, false, "end_id", vrprouting::MATRIX_INDEX},
-        {-1, 0, false, "capacity", vrprouting::ANY_POSITIVE_ARRAY},
-        {-1, 0, false, "skills", vrprouting::ANY_UINT_ARRAY},
-        {-1, 0, false, "tw_open", use_timestamps? vrprouting::TIMESTAMP : vrprouting::TTIMESTAMP},
-        {-1, 0, false, "tw_close", use_timestamps? vrprouting::TIMESTAMP : vrprouting::TTIMESTAMP},
-        {-1, 0, false, "speed_factor", vrprouting::ANY_NUMERICAL},
-        {-1, 0, false, "max_tasks", vrprouting::POSITIVE_INTEGER},
-        {-1, 0, false, "data", vrprouting::JSONB}};
+        {-1, 0, true, "id", pgvroom::IDX},
+        {-1, 0, false, "start_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, false, "end_id", pgvroom::MATRIX_INDEX},
+        {-1, 0, false, "capacity", pgvroom::ANY_POSITIVE_ARRAY},
+        {-1, 0, false, "skills", pgvroom::ANY_UINT_ARRAY},
+        {-1, 0, false, "tw_open", use_timestamps? pgvroom::TIMESTAMP : pgvroom::TTIMESTAMP},
+        {-1, 0, false, "tw_close", use_timestamps? pgvroom::TIMESTAMP : pgvroom::TTIMESTAMP},
+        {-1, 0, false, "speed_factor", pgvroom::ANY_NUMERICAL},
+        {-1, 0, false, "max_tasks", pgvroom::POSITIVE_INTEGER},
+        {-1, 0, false, "data", pgvroom::JSONB}};
 
     return pgget::get_data<Vroom_vehicle_t>(sql, use_timestamps, info, &fetch_vehicles);
 }
@@ -222,4 +222,4 @@ get_vehicles(
 }  // namespace vroom
 
 }  // namespace pgget
-}  // namespace vrprouting
+}  // namespace pgvroom

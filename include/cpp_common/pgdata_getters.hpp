@@ -51,7 +51,7 @@ extern "C" {
 #include "cpp_common/vroom_time_window_t.hpp"
 #include "cpp_common/vroom_vehicle_t.hpp"
 
-namespace vrprouting {
+namespace pgvroom {
 namespace pgget {
 namespace vroom {
 
@@ -75,6 +75,6 @@ std::vector<Vroom_vehicle_t> get_vehicles(const std::string&, bool);
 
 }  // namespace vroom
 }  // namespace pgget
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_CPP_COMMON_PGDATA_GETTERS_HPP_

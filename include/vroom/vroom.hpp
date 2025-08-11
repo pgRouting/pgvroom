@@ -45,7 +45,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 using Vroom_rt = struct Vroom_rt;
 
-namespace vrprouting {
+namespace pgvroom {
 
 class Vroom_shipment_t;
 class Vroom_break_t;
@@ -55,7 +55,7 @@ class Vroom_job_t;
 
 namespace problem {
 
-class Vroom : public vrprouting::Messages {
+class Vroom : public pgvroom::Messages {
     using MapTW = std::map<std::pair<Idx, char>, std::vector<::vroom::TimeWindow>>;
 
  public:
@@ -76,7 +76,7 @@ class Vroom : public vrprouting::Messages {
             const MapTW&);
 
     /** @brief sets m_matrix */
-    void add_matrix(const vrprouting::vroom::Matrix&);
+    void add_matrix(const pgvroom::vroom::Matrix&);
 
     /** @brief solves the vroom problem */
     std::vector<Vroom_rt> solve(int32_t, int32_t, int64_t);
@@ -91,10 +91,10 @@ class Vroom : public vrprouting::Messages {
     std::vector<::vroom::Job> m_jobs;
     std::vector<std::pair<::vroom::Job, ::vroom::Job>> m_shipments;
     std::vector<::vroom::Vehicle> m_vehicles;
-    vrprouting::vroom::Matrix m_matrix;
+    pgvroom::vroom::Matrix m_matrix;
 };
 
 }  // namespace problem
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_VROOM_VROOM_HPP_

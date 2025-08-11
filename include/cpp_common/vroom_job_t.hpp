@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include <vector>
 #include "c_types/typedefs.h"
 
-namespace vrprouting {
+namespace pgvroom {
 
 /** @brief Job's attributes
 
@@ -72,6 +72,6 @@ class Vroom_job_t {
      std::string data;          /** Metadata information of job */
 };
 
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_CPP_COMMON_VROOM_JOB_T_HPP_

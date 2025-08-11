@@ -35,7 +35,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #include "c_types/typedefs.h"
 
-namespace vrprouting {
+namespace pgvroom {
 
 /** @brief Time window's attributes
 
@@ -53,6 +53,6 @@ class Vroom_time_window_t {
      ::vroom::TimeWindow tw;
 };
 
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_CPP_COMMON_VROOM_TIME_WINDOW_T_HPP_

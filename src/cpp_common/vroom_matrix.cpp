@@ -43,7 +43,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include "cpp_common/vroom_matrix_t.hpp"
 
 
-namespace vrprouting {
+namespace pgvroom {
 namespace vroom {
 
 /**
@@ -184,7 +184,7 @@ Matrix::get_vroom_cost_matrix() const {
 }
 
 /**
- * @brief sets the VROOM duration matrix from vrprouting Base Matrix
+ * @brief sets the VROOM duration matrix from pgvroom Base Matrix
  */
 void
 Matrix::set_vroom_duration_matrix(const VMatrix &m_matrix) {
@@ -198,7 +198,7 @@ Matrix::set_vroom_duration_matrix(const VMatrix &m_matrix) {
 }
 
 /**
- * @brief sets the VROOM cost matrix from vrprouting Base Matrix
+ * @brief sets the VROOM cost matrix from pgvroom Base Matrix
  */
 void
 Matrix::set_vroom_cost_matrix(const VMatrix &m_matrix) {
@@ -231,4 +231,4 @@ Matrix::has_infinity(const VMatrix &m_matrix) const {
 }
 
 }  // namespace vroom
-}  // namespace vrprouting
+}  // namespace pgvroom

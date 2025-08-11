@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #include "c_types/typedefs.h"
 
-namespace vrprouting {
+namespace pgvroom {
 
 /** @brief Vroom's Vehicles's attributes
 
@@ -70,6 +70,6 @@ class Vroom_vehicle_t {
      std::string data; /** Metadata information of vehicle */
 };
 
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_CPP_COMMON_VROOM_VEHICLE_T_HPP_

@@ -33,7 +33,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #include "c_types/typedefs.h"
 
-namespace vrprouting {
+namespace pgvroom {
 
 /** @brief Matrix's attributes
 
@@ -54,7 +54,7 @@ class Vroom_matrix_t {
      TravelCost cost;       /** Cost to travel from start to end */
 };
 
-}  // namespace vrprouting
+}  // namespace pgvroom
 
 #endif  // INCLUDE_CPP_COMMON_VROOM_MATRIX_T_HPP_
 
