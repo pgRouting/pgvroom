@@ -64,7 +64,7 @@ function get_history(name, lang) {
     prepare();
     var data = get(name);
     var title = get_titles(titles, lang);
-    var home = `<a class="reference external" href="https://pgorpy.pgrouting.org/`;
+    var home = `<a class="reference external" href="https://pgvroom.pgrouting.org/`;
     var validlang = lang;
 
     var result;

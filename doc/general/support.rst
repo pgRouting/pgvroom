@@ -15,7 +15,7 @@ Support is available through the
 `documentation <https://pgvroom.pgrouting.org>`_, tutorials, mailing lists and others.
 
 If you’re looking for `commercial support`_, find below
-a list of companies providing pgORpy development and consulting services.
+a list of companies providing pgvroom development and consulting services.
 
 
 Reporting Problems
@@ -55,7 +55,7 @@ For general questions and topics about how to use pgvroom:
 
 * pgRouting-users discourse category: https://discourse.osgeo.org/c/pgrouting/pgrouting-users
 
-For questions about development of pgorpy:
+For questions about development of pgvroom:
 
 * pgRouting-dev discourse category: https://discourse.osgeo.org/c/pgrouting/pgrouting-dev
 

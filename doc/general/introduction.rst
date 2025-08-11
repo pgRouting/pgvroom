@@ -1,7 +1,7 @@
 ..
    ****************************************************************************
-   pgORpy Manual
-   Copyright(c) pgORpy Contributors
+   pgvroom Manual
+   Copyright(c) pgvroom Contributors
 
    This documentation is licensed under a Creative Commons Attribution-Share
    Alike 3.0 License: https://creativecommons.org/licenses/by-sa/3.0/
@@ -13,7 +13,7 @@
 Introduction
 ===============================================================================
 
-pgORpy is a `PostgreSQL <https://www.postgresql.org>`__ extension that connects
+pgvroom is a `PostgreSQL <https://www.postgresql.org>`__ extension that connects
 'OR-tools <https://developers.google.com/optimization>' to the database.
 
 The project is supported and maintained by
@@ -23,13 +23,13 @@ The project is supported and maintained by
 
 and a broad user community.
 
-pgORpy is a sub product of `pgRouting organization <https://pgrouting.org>`__
+pgvroom is a sub product of `pgRouting organization <https://pgrouting.org>`__
 organization.
 
 License
 -------------------------------------------------------------------------------
 
-The following licenses can be found in pgORpy:
+The following licenses can be found in pgvroom:
 
 .. list-table::
    :widths: 250 500
@@ -37,14 +37,14 @@ The following licenses can be found in pgORpy:
    * - **License**
      -
    * - GNU General Public License v2.0 or later
-     - Most features of pgORpy are available under GNU General Public License
+     - Most features of pgvroom are available under GNU General Public License
        v2.0 or later `GPL-2.0-or-later
        <https://spdx.org/licenses/GPL-2.0-or-later.html>`__.
    * - BSD 2-Clause "Simplified" License
      - VROOM is under `BSD 2-Clause "Simplified" License
        <https://github.com/VROOM-Project/vroom/blob/master/LICENSE>`__
    * - Creative Commons Attribution-Share Alike 3.0 License
-     - The pgORpy Manual and examples is licensed under a `Creative Commons
+     - The pgvroom Manual and examples is licensed under a `Creative Commons
        Attribution-Share Alike 3.0 License
        <https://creativecommons.org/licenses/by-sa/3.0/>`_.
 

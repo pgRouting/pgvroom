@@ -139,7 +139,7 @@ if ($DATA) {exit 0;};
 # Find the desired queries files
 File::Find::find({wanted => \&want_tests}, @testpath);
 
-die "Error: no queries files found. Run this command from the top path of pgORpy repository!\n" unless @cfgs;
+die "Error: no queries files found. Run this command from the top path of pgvroom repository!\n" unless @cfgs;
 
 
 # cfgs = SET of configuration file names

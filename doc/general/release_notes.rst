@@ -9,11 +9,6 @@
 
 |
 
-* `Documentation <https://vrp.pgrouting.org/>`__ → `pgvroom v0 <https://vrp.pgrouting.org/v0>`__
-* Supported Versions
-  `Latest <https://vrp.pgrouting.org/latest/en/release_notes.html>`__
-  (`v0 <https://vrp.pgrouting.org/v0/en/release_notes.html>`__)
-
 Release Notes
 ===============================================================================
 
