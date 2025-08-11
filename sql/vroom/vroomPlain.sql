@@ -1,5 +1,5 @@
 /*PGR-GNU*****************************************************************
-File: vrp_vroomPlain.sql
+File: vroomPlain.sql
 
 Copyright (c) 2021 pgRouting developers
 Mail: project@pgrouting.org
@@ -26,8 +26,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
--- v0.2
-CREATE FUNCTION vrp_vroomPlain(
+--v0.1
+CREATE FUNCTION vro_vroomPlain(
     TEXT,  -- jobs_sql (required)
     TEXT,  -- jobs_time_windows_sql (required)
     TEXT,  -- shipments_sql (required)
@@ -82,9 +82,9 @@ BEGIN
       A.waiting_time,
       A.departure,
       A.load
-    FROM _vrp_vroom(_vroom_get_statement($1), _vroom_get_statement($2), _vroom_get_statement($3),
-                    _vroom_get_statement($4), _vroom_get_statement($5), _vroom_get_statement($6),
-                    _vroom_get_statement($7), _vroom_get_statement($8), exploration_level,
+    FROM _vro_vroom(_vro_get_statement($1), _vro_get_statement($2), _vro_get_statement($3),
+                    _vro_get_statement($4), _vro_get_statement($5), _vro_get_statement($6),
+                    _vro_get_statement($7), _vro_get_statement($8), exploration_level,
                     timeout, 0::SMALLINT, true) A;
 END;
 $BODY$
@@ -93,8 +93,8 @@ LANGUAGE plpgsql VOLATILE;
 
 -- COMMENTS
 
-COMMENT ON FUNCTION vrp_vroomPlain(TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, INTEGER, INTEGER)
-IS 'vrp_vroomPlain
+COMMENT ON FUNCTION vro_vroomPlain(TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, INTEGER, INTEGER)
+IS 'vro_vroomPlain
  - EXPERIMENTAL
  - Parameters:
    - Jobs SQL with columns:
@@ -119,5 +119,5 @@ IS 'vrp_vroomPlain
    - exploration_level := 5
    - timeout := -1
  - Documentation:
-   - ${PROJECT_DOC_LINK}/vrp_vroomPlain.html
+   - ${PROJECT_DOC_LINK}/vro_vroomPlain.html
 ';

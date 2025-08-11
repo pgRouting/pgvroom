@@ -1,5 +1,5 @@
 /*PGR-GNU*****************************************************************
-File: _vrp_vroom.sql
+File: _vroom.sql
 
 Copyright (c) 2021 pgRouting developers
 Mail: project@pgrouting.org
@@ -26,8 +26,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
--- v0.2
-CREATE FUNCTION _vrp_vroom(
+--v0.1
+CREATE FUNCTION _vro_vroom(
     jobs_sql TEXT,
     jobs_time_windows_sql TEXT,
     shipments_sql TEXT,
@@ -65,5 +65,5 @@ LANGUAGE C VOLATILE;
 
 -- COMMENTS
 
-COMMENT ON FUNCTION _vrp_vroom(TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, INTEGER, INTEGER, SMALLINT, BOOLEAN)
+COMMENT ON FUNCTION _vro_vroom(TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, INTEGER, INTEGER, SMALLINT, BOOLEAN)
 IS 'pgRouting internal function';

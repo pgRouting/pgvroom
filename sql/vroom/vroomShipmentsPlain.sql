@@ -1,5 +1,5 @@
 /*PGR-GNU*****************************************************************
-File: vrp_vroomShipmentsPlain.sql
+File: vroomShipmentsPlain.sql
 
 Copyright (c) 2021 pgRouting developers
 Mail: project@pgrouting.org
@@ -26,8 +26,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
--- v0.2
-CREATE FUNCTION vrp_vroomShipmentsPlain(
+--v0.1
+CREATE FUNCTION vro_vroomShipmentsPlain(
     TEXT,  -- shipments_sql (required)
     TEXT,  -- shipments_time_windows_sql (required)
     TEXT,  -- vehicles_sql (required)
@@ -80,10 +80,10 @@ BEGIN
       A.waiting_time,
       A.departure,
       A.load
-    FROM _vrp_vroom(NULL, NULL, _vroom_get_statement($1),
-                    _vroom_get_statement($2), _vroom_get_statement($3),
-                    _vroom_get_statement($4), _vroom_get_statement($5),
-                    _vroom_get_statement($6), exploration_level,
+    FROM _vro_vroom(NULL, NULL, _vro_get_statement($1),
+                    _vro_get_statement($2), _vro_get_statement($3),
+                    _vro_get_statement($4), _vro_get_statement($5),
+                    _vro_get_statement($6), exploration_level,
                     timeout, 2::SMALLINT, true) A;
 END;
 $BODY$
@@ -92,8 +92,8 @@ LANGUAGE plpgsql VOLATILE;
 
 -- COMMENTS
 
-COMMENT ON FUNCTION vrp_vroomShipmentsPlain(TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, INTEGER, INTEGER)
-IS 'vrp_vroomShipmentsPlain
+COMMENT ON FUNCTION vro_vroomShipmentsPlain(TEXT, TEXT, TEXT, TEXT, TEXT, TEXT, INTEGER, INTEGER)
+IS 'vro_vroomShipmentsPlain
  - EXPERIMENTAL
  - Parameters:
    - Shipments SQL with columns:
@@ -114,5 +114,5 @@ IS 'vrp_vroomShipmentsPlain
    - exploration_level := 5
    - timeout := -1
  - Documentation:
-   - ${PROJECT_DOC_LINK}/vrp_vroomShipmentsPlain.html
+   - ${PROJECT_DOC_LINK}/vro_vroomShipmentsPlain.html
 ';

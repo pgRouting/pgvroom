@@ -24,8 +24,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
---v0.4
-CREATE FUNCTION vrp_full_version(
+--v0.1
+CREATE FUNCTION vro_full_version(
     OUT version TEXT,
     OUT build_type TEXT,
     OUT compile_date TEXT,
@@ -37,19 +37,19 @@ CREATE FUNCTION vrp_full_version(
 )
 RETURNS Record AS
 $BODY$
-    SELECT vrp_version(),
-        _vrp_build_type(),
-        _vrp_compilation_date(),
-        _vrp_lib_version(),
-        _vrp_operating_system(),
-        _vrp_pgsql_version(),
-        _vrp_compiler_version(),
-        _vrp_git_hash()
+    SELECT vro_version(),
+        _vro_build_type(),
+        _vro_compilation_date(),
+        _vro_lib_version(),
+        _vro_operating_system(),
+        _vro_pgsql_version(),
+        _vro_compiler_version(),
+        _vro_git_hash()
 $BODY$
 LANGUAGE sql IMMUTABLE;
 
-COMMENT ON FUNCTION vrp_full_version() IS
-'vrp_full_version
+COMMENT ON FUNCTION vro_full_version() IS
+'vro_full_version
 - Documentation
-  - ${PROJECT_DOC_LINK}/vrp_full_version.html
+  - ${PROJECT_DOC_LINK}/vro_full_version.html
 ';

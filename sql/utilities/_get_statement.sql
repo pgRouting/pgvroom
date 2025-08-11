@@ -23,8 +23,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
---v3.0
-CREATE FUNCTION _vroom_get_statement(o_sql text)
+--v0.1
+CREATE FUNCTION _vro_get_statement(o_sql text)
 RETURNS text AS
 $BODY$
 DECLARE
@@ -40,5 +40,5 @@ END
 $BODY$
 LANGUAGE plpgsql STABLE STRICT;
 
-COMMENT ON FUNCTION _vroom_get_statement(TEXT)
+COMMENT ON FUNCTION _vro_get_statement(TEXT)
 IS 'pgvroom internal function';

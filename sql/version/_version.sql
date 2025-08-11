@@ -24,78 +24,78 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  ********************************************************************PGR-GNU*/
 
---v0.0
-CREATE FUNCTION _vrp_build_type()
+--v0.1
+CREATE FUNCTION _vro_build_type()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_build_type() IS
+COMMENT ON FUNCTION _vro_build_type() IS
 'pgRouting internal function';
 
 ---
 
---v0.0
-CREATE FUNCTION _vrp_compilation_date()
+--v0.1
+CREATE FUNCTION _vro_compilation_date()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_compilation_date() IS
+COMMENT ON FUNCTION _vro_compilation_date() IS
 'pgRouting internal function';
 
 ---
 
---v0.0
-CREATE FUNCTION _vrp_compiler_version()
+--v0.1
+CREATE FUNCTION _vro_compiler_version()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_compiler_version() IS
+COMMENT ON FUNCTION _vro_compiler_version() IS
 'pgRouting internal function';
 
 ---
 
---v3.0
-CREATE FUNCTION _vrp_git_hash()
+--v0.1
+CREATE FUNCTION _vro_git_hash()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_compilation_date() IS
+COMMENT ON FUNCTION _vro_compilation_date() IS
 'pgRouting internal function';
 
 ---
 
---v0.0
-CREATE FUNCTION _vrp_lib_version()
+--v0.1
+CREATE FUNCTION _vro_lib_version()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_lib_version() IS
+COMMENT ON FUNCTION _vro_lib_version() IS
 'pgRouting internal function';
 
 
 ---
 
---v0.0
-CREATE FUNCTION _vrp_operating_system()
+--v0.1
+CREATE FUNCTION _vro_operating_system()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_operating_system() IS
+COMMENT ON FUNCTION _vro_operating_system() IS
 'pgRouting internal function';
 ---
 
---v0.0
-CREATE FUNCTION _vrp_pgsql_version()
+--v0.1
+CREATE FUNCTION _vro_pgsql_version()
 RETURNS TEXT AS
 'MODULE_PATHNAME'
 LANGUAGE C VOLATILE STRICT;
 
-COMMENT ON FUNCTION _vrp_pgsql_version() IS
+COMMENT ON FUNCTION _vro_pgsql_version() IS
 'pgRouting internal function';
 
