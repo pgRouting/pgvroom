@@ -51,8 +51,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #include "drivers/vroom_driver.h"
 
-PGDLLEXPORT Datum _vrp_vroom(PG_FUNCTION_ARGS);
-PG_FUNCTION_INFO_V1(_vrp_vroom);
+PGDLLEXPORT Datum _vro_vroom(PG_FUNCTION_ARGS);
+PG_FUNCTION_INFO_V1(_vro_vroom);
 
 static
 void
@@ -77,10 +77,10 @@ process(
     char *notice_msg = NULL;
     char *err_msg = NULL;
 
-    vrp_SPI_connect();
+    vro_SPI_connect();
 
     clock_t start_t = clock();
-    vrp_do_vroom(
+    vro_do_vroom(
             jobs_sql,
             jobs_tws_sql,
             shipments_sql,
@@ -102,7 +102,7 @@ process(
             &notice_msg,
             &err_msg);
 
-    time_msg("processing vrp_vroom", start_t, clock());
+    time_msg("processing vro_vroom", start_t, clock());
 
     if (err_msg && (*result_tuples)) {
         pfree(*result_tuples);
@@ -110,13 +110,13 @@ process(
         (*result_count) = 0;
     }
 
-    vrp_global_report(&log_msg, &notice_msg, &err_msg);
+    vro_global_report(&log_msg, &notice_msg, &err_msg);
 
-    vrp_SPI_finish();
+    vro_SPI_finish();
 }
 
 
-PGDLLEXPORT Datum _vrp_vroom(PG_FUNCTION_ARGS) {
+PGDLLEXPORT Datum _vro_vroom(PG_FUNCTION_ARGS) {
   FuncCallContext   *funcctx;
   TupleDesc       tuple_desc;
 

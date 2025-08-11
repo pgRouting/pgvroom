@@ -37,10 +37,10 @@ extern "C" {
 #include <fmgr.h>
 
 
-void vrp_SPI_finish(void);
-void vrp_SPI_connect(void);
-SPIPlanPtr vrp_SPI_prepare(const char*);
-Portal vrp_SPI_cursor_open(SPIPlanPtr);
+void vro_SPI_finish(void);
+void vro_SPI_connect(void);
+SPIPlanPtr vro_SPI_prepare(const char*);
+Portal vro_SPI_cursor_open(SPIPlanPtr);
 
 #ifdef __cplusplus
 }

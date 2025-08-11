@@ -51,7 +51,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #include "vroom/vroom.hpp"
 
 void
-vrp_do_vroom(
+vro_do_vroom(
         char *jobs_sql,
         char *jobs_tws_sql,
         char *shipments_sql,

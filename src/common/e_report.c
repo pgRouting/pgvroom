@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
  * Then on the C side
  *  ~~~~{.c}
- *  vrp_global_report(&log_msg, &notice_msg, &error_msg);
+ *  vro_global_report(&log_msg, &notice_msg, &error_msg);
  *  ~~~~
  *
  * - When there is ERROR then postgreSQL takes over control
@@ -44,7 +44,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  * - When there is no error this will free the log & notice
  */
 void
-vrp_global_report(
+vro_global_report(
         char** log,
         char** notice,
         char** err) {

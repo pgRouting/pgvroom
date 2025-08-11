@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 /** @brief print log notice and error */
 void
-vrp_global_report(
+vro_global_report(
         char** log_msg,
         char** notice_msg,
         char** error_msg);

@@ -36,7 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 // http://www.postgresql.org/docs/9.4/static/spi-spi-finish.html
 void
-vrp_SPI_finish(void) {
+vro_SPI_finish(void) {
     int code = SPI_finish();
     if (code != SPI_OK_FINISH) {  // SPI_ERROR_UNCONNECTED
         elog(ERROR, "There was no connection to SPI");
@@ -44,7 +44,7 @@ vrp_SPI_finish(void) {
 }
 
 void
-vrp_SPI_connect(void) {
+vro_SPI_connect(void) {
     int SPIcode;
     SPIcode = SPI_connect();
     if (SPIcode  != SPI_OK_CONNECT) {
@@ -53,7 +53,7 @@ vrp_SPI_connect(void) {
 }
 
 SPIPlanPtr
-vrp_SPI_prepare(const char* sql) {
+vro_SPI_prepare(const char* sql) {
     SPIPlanPtr SPIplan;
     SPIplan = SPI_prepare(sql, 0, NULL);
     if (SPIplan  == NULL) {
@@ -63,7 +63,7 @@ vrp_SPI_prepare(const char* sql) {
 }
 
 Portal
-vrp_SPI_cursor_open(SPIPlanPtr SPIplan) {
+vro_SPI_cursor_open(SPIPlanPtr SPIplan) {
     Portal SPIportal;
     SPIportal = SPI_cursor_open(NULL, SPIplan, NULL, NULL, true);
     if (SPIportal == NULL) {

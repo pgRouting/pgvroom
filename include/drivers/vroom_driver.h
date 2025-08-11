@@ -45,7 +45,7 @@ typedef struct Vroom_rt Vroom_rt;
 extern "C" {
 #endif
 
-void vrp_do_vroom(
+void vro_do_vroom(
       char*, char*, char*, char*, char*, char*, char*, char*,
       int32_t, int32_t, int16_t, bool,
 

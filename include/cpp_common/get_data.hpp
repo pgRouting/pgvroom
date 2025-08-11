@@ -57,8 +57,8 @@ get_data(const std::string& sql, bool flag, std::vector<Info> info, Func func) {
 
     size_t total_tuples = 0;
 
-    auto SPIplan = vrp_SPI_prepare(sql.c_str());
-    auto SPIportal = vrp_SPI_cursor_open(SPIplan);
+    auto SPIplan = vro_SPI_prepare(sql.c_str());
+    auto SPIportal = vro_SPI_cursor_open(SPIplan);
 
     bool moredata = true;
     std::vector<Data_type> tuples;
