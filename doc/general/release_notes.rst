@@ -31,7 +31,7 @@ vrpRouting 0
    :local:
    :depth: 1
 
-vrpRouting 0.1
+vrpRouting 0.1.0
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. rubric:: Extraction tasks
