@@ -57,7 +57,7 @@ class Identifiers {
     //! @name constructors
     //@{
     Identifiers() = default;
-    Identifiers(const std::set<T>& data) {
+    explicit Identifiers(const std::set<T>& data) {
         m_ids = data;
     }
 
