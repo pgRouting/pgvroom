@@ -1,7 +1,6 @@
 BEGIN;
-SET search_path TO 'vroom', 'public';
 
-SELECT CASE WHEN min_version('0.3.0') THEN plan (3504) ELSE plan(1) END;
+SELECT plan (3504);
 
 /*
 SELECT * FROM vrp_vroomPlain(
@@ -324,18 +323,14 @@ DECLARE
   inner_query_table TEXT;
 BEGIN
 
-  IF NOT min_version('0.3.0') THEN
-    RETURN QUERY
-    SELECT skip(1, 'Function is modified on 0.3.0');
-    RETURN;
-  END IF;
-
   -- vrp_vroom
 
   IF is_plain = TRUE THEN
     fn := 'vrp_vroomPlain';
+    SET search_path TO 'plain', 'public';
   ELSE
     fn := 'vrp_vroom';
+    SET search_path TO 'vroom', 'public';
   END IF;
   start_sql := '';
   rest_sql := ', $$SELECT * FROM jobs_time_windows$$, $$SELECT * FROM shipments$$, $$SELECT * FROM shipments_time_windows$$, ' ||
@@ -472,21 +467,6 @@ LANGUAGE plpgsql;
 SELECT inner_query(is_plain => TRUE, additional => ', exploration_level => 5)');
 SELECT inner_query(is_plain => TRUE, additional => ', timeout => -1)');
 SELECT inner_query(is_plain => TRUE, additional => ', exploration_level => 5, timeout => -1)');
-
--- Adjust the column types to the expected types for vroom functions with timestamps/interval
-ALTER TABLE vroom.jobs ALTER COLUMN service TYPE INTERVAL USING make_interval(secs => service);
-ALTER TABLE vroom.shipments ALTER COLUMN p_service TYPE INTERVAL USING make_interval(secs => p_service);
-ALTER TABLE vroom.shipments ALTER COLUMN d_service TYPE INTERVAL USING make_interval(secs => d_service);
-ALTER TABLE vroom.vehicles ALTER COLUMN tw_open TYPE TIMESTAMP USING (to_timestamp(tw_open + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.vehicles ALTER COLUMN tw_close TYPE TIMESTAMP USING (to_timestamp(tw_close + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.breaks ALTER COLUMN service TYPE INTERVAL USING make_interval(secs => service);
-ALTER TABLE vroom.jobs_time_windows ALTER COLUMN tw_open TYPE TIMESTAMP USING (to_timestamp(tw_open + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.jobs_time_windows ALTER COLUMN tw_close TYPE TIMESTAMP USING (to_timestamp(tw_close + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.shipments_time_windows ALTER COLUMN tw_open TYPE TIMESTAMP USING (to_timestamp(tw_open + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.shipments_time_windows ALTER COLUMN tw_close TYPE TIMESTAMP USING (to_timestamp(tw_close + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.breaks_time_windows ALTER COLUMN tw_open TYPE TIMESTAMP USING (to_timestamp(tw_open + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.breaks_time_windows ALTER COLUMN tw_close TYPE TIMESTAMP USING (to_timestamp(tw_close + 1630573200) at time zone 'UTC')::TIMESTAMP;
-ALTER TABLE vroom.matrix ALTER COLUMN duration TYPE INTERVAL USING make_interval(secs => duration);
 
 SELECT inner_query(is_plain => FALSE, additional => ', exploration_level => 5)');
 SELECT inner_query(is_plain => FALSE, additional => ', timeout => $$-00:00:01$$::INTERVAL)');
