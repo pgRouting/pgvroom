@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) pgvroom Contributors - Version 0.1
+# This file is distributed under the same license as the pgvroom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pgvroom 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 12:40-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+msgid "Release Notes"
+msgstr ""
+
+msgid ""
+"To see the full list of changes check the list of `Git commits "
+"<https://github.com/pgRouting/pgvroom/commits>`_ on Github."
+msgstr ""
+
+msgid "Mayors"
+msgstr ""
+
+msgid "pgvroom 0"
+msgstr ""
+
+msgid "Minors 0.x"
+msgstr ""
+
+msgid "pgvroom 0.1.0"
+msgstr ""
+
+msgid "Extraction tasks"
+msgstr ""
+
+msgid "Porting vrpRouting's VROOM functionality"
+msgstr ""
+
+msgid "VROOM 1.12.0"
+msgstr ""
+
+msgid "vro_vroom"
+msgstr ""
+
+msgid "vro_vroomJobs"
+msgstr ""
+
+msgid "vro_vroomShipments"
+msgstr ""
+
+msgid "vro_vroomPlain"
+msgstr ""
+
+msgid "vro_vroomJobsPlain"
+msgstr ""
+
+msgid "vro_vroomShipmentsPlain"
+msgstr ""
+
+msgid "vro_version"
+msgstr ""
+
+msgid "vro_full_version"
+msgstr ""
+

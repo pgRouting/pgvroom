@@ -1,0 +1,620 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) pgvroom Contributors - Version 0.1
+# This file is distributed under the same license as the pgvroom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pgvroom 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 11:50-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "vro_vroomJobs - Experimental"
+msgstr ""
+
+msgid "``vro_vroomJobs`` - Vehicle Routing Problem with VROOM, involving only jobs."
+msgstr ""
+
+msgid "Availability"
+msgstr ""
+
+msgid "Version 0.1.0"
+msgstr ""
+
+msgid "New function"
+msgstr ""
+
+msgid "Function for VROOM 1.12.0"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "VROOM is an open-source optimization engine that aims at providing good solutions to various real-life vehicle routing problems (VRP) within a small computing time. This function can be used to get the solution to a problem involving only jobs."
+msgstr ""
+
+msgid "Signature"
+msgstr ""
+
+msgid "\\ \\"
+msgstr ""
+
+msgid "vro_vroom("
+msgstr ""
+
+msgid "`Jobs SQL`_, `Jobs Time Windows SQL`_,"
+msgstr ""
+
+msgid "`Vehicles SQL`_,"
+msgstr ""
+
+msgid "`Breaks SQL`_, `Breaks Time Windows SQL`_,"
+msgstr ""
+
+msgid "`Time Matrix SQL`_"
+msgstr ""
+
+msgid "[, exploration_level] [, timeout])  -- Experimental on v0.2"
+msgstr ""
+
+msgid "RETURNS SET OF"
+msgstr ""
+
+msgid "(seq, vehicle_seq, vehicle_id, vehicle_data, step_seq, step_type, task_id,"
+msgstr ""
+
+msgid "task_data, arrival, travel_time, service_time, waiting_time, departure, load)"
+msgstr ""
+
+msgid "**Example**: This example is based on the modified VROOM Data of the :doc:`sampledata` network. The modification in the tables is mentioned at the end of the :doc:`sampledata`."
+msgstr ""
+
+msgid "Parameters"
+msgstr ""
+
+msgid "Parameter"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "`Jobs SQL`_"
+msgstr ""
+
+msgid "``TEXT``"
+msgstr ""
+
+msgid "Query describing the single-location pickup and/or delivery"
+msgstr ""
+
+msgid "`Jobs Time Windows SQL`_"
+msgstr ""
+
+msgid "Query describing valid slots for job service start."
+msgstr ""
+
+msgid "`Vehicles SQL`_"
+msgstr ""
+
+msgid "Query describing the available vehicles."
+msgstr ""
+
+msgid "`Breaks SQL`_"
+msgstr ""
+
+msgid "Query describing the driver breaks."
+msgstr ""
+
+msgid "`Breaks Time Windows SQL`_"
+msgstr ""
+
+msgid "Query describing valid slots for break start."
+msgstr ""
+
+msgid "Query containing the distance or travel times between the locations."
+msgstr ""
+
+msgid "Optional Parameters"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "``exploration_level``"
+msgstr ""
+
+msgid "``INTEGER``"
+msgstr ""
+
+msgid ":math:`5`"
+msgstr ""
+
+msgid "Exploration level to use while solving."
+msgstr ""
+
+msgid "Ranges from ``[0, 5]``"
+msgstr ""
+
+msgid "A smaller exploration level gives faster result."
+msgstr ""
+
+msgid "``timeout``"
+msgstr ""
+
+msgid "``INTERVAL``"
+msgstr ""
+
+msgid "'-00:00:01'::INTERVAL"
+msgstr ""
+
+msgid "Timeout value to stop the solving process."
+msgstr ""
+
+msgid "Gives the best possible solution within a time limit. Note that some additional seconds may be required to return back the data."
+msgstr ""
+
+msgid "Any negative timeout value is ignored."
+msgstr ""
+
+msgid "Inner Queries"
+msgstr ""
+
+msgid "Jobs SQL"
+msgstr ""
+
+msgid "A ``SELECT`` statement that returns the following columns:"
+msgstr ""
+
+msgid "``id, location_id``"
+msgstr ""
+
+msgid "``[setup, service, delivery, pickup, skills, priority, data]``"
+msgstr ""
+
+msgid "Maximum values apply from vroom"
+msgstr ""
+
+msgid "``setup`` and ``service``"
+msgstr ""
+
+msgid "|intervalmax|"
+msgstr ""
+
+msgid "``skills``"
+msgstr ""
+
+msgid ":math:`2147483647`"
+msgstr ""
+
+msgid "``priority``"
+msgstr ""
+
+msgid ":math:`100`"
+msgstr ""
+
+msgid "Column"
+msgstr ""
+
+msgid "``id``"
+msgstr ""
+
+msgid "|ANY-INTEGER|"
+msgstr ""
+
+msgid "Positive unique identifier of the job."
+msgstr ""
+
+msgid "``location_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the location of the job."
+msgstr ""
+
+msgid "``setup``"
+msgstr ""
+
+msgid "|interval|"
+msgstr ""
+
+msgid "|interval0|"
+msgstr ""
+
+msgid "The Job setup duration."
+msgstr ""
+
+msgid "``service``"
+msgstr ""
+
+msgid "The Job service duration. Max value:"
+msgstr ""
+
+msgid "``pickup``"
+msgstr ""
+
+msgid "``ARRAY[ANY-INTEGER]``"
+msgstr ""
+
+msgid "``[]``"
+msgstr ""
+
+msgid "Array of non-negative integers describing multidimensional quantities for pickup such as number of items, weight, volume etc."
+msgstr ""
+
+msgid "All jobs must have the same value of :code:`array_length(pickup, 1)`"
+msgstr ""
+
+msgid "``delivery``"
+msgstr ""
+
+msgid "Array of non-negative integers describing multidimensional quantities for delivery such as number of items, weight, volume etc."
+msgstr ""
+
+msgid "All jobs must have the same value of :code:`array_length(delivery, 1)`"
+msgstr ""
+
+msgid "Array of non-negative integers defining mandatory skills."
+msgstr ""
+
+msgid ":math:`0`"
+msgstr ""
+
+msgid "Value range: :math:`[0, 100]`"
+msgstr ""
+
+msgid "``data``"
+msgstr ""
+
+msgid "``JSONB``"
+msgstr ""
+
+msgid "``'{}'::JSONB``"
+msgstr ""
+
+msgid "Any metadata information of the job."
+msgstr ""
+
+msgid "Jobs Time Windows SQL"
+msgstr ""
+
+msgid "``id, tw_open, tw_close``"
+msgstr ""
+
+msgid "Positive unique identifier of the: job, pickup/delivery shipment, or break."
+msgstr ""
+
+msgid "``tw_open``"
+msgstr ""
+
+msgid "|timestamp|"
+msgstr ""
+
+msgid "Time window opening time."
+msgstr ""
+
+msgid "``tw_close``"
+msgstr ""
+
+msgid "Time window closing time."
+msgstr ""
+
+msgid "Vehicles SQL"
+msgstr ""
+
+msgid "``id, start_id, end_id``"
+msgstr ""
+
+msgid "``[capacity, skills, tw_open, tw_close, speed_factor, max_tasks, data]``"
+msgstr ""
+
+msgid "Positive unique identifier of the vehicle."
+msgstr ""
+
+msgid "``start_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the start location."
+msgstr ""
+
+msgid "``end_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the end location."
+msgstr ""
+
+msgid "``capacity``"
+msgstr ""
+
+msgid "Array of non-negative integers describing multidimensional quantities such as number of items, weight, volume etc."
+msgstr ""
+
+msgid "All vehicles must have the same value of :code:`array_length(capacity, 1)`"
+msgstr ""
+
+msgid "|tw_open_default|"
+msgstr ""
+
+msgid ":code:`tw_open \\leq tw_close`"
+msgstr ""
+
+msgid "|tw_close_default|"
+msgstr ""
+
+msgid "``speed_factor``"
+msgstr ""
+
+msgid "|ANY-NUMERICAL|"
+msgstr ""
+
+msgid ":math:`1.0`"
+msgstr ""
+
+msgid "Vehicle travel time multiplier."
+msgstr ""
+
+msgid "Max value of speed factor for a vehicle shall not be greater than 5 times the speed factor of any other vehicle."
+msgstr ""
+
+msgid "``max_tasks``"
+msgstr ""
+
+msgid "Maximum number of tasks in a route for the vehicle."
+msgstr ""
+
+msgid "A job, pickup, or delivery is counted as a single task."
+msgstr ""
+
+msgid "Any metadata information of the vehicle."
+msgstr ""
+
+msgid "**Note**:"
+msgstr ""
+
+msgid "At least one of the ``start_id`` or ``end_id`` shall be present."
+msgstr ""
+
+msgid "If ``end_id`` is omitted, the resulting route will stop at the last visited task, whose choice is determined by the optimization process."
+msgstr ""
+
+msgid "If ``start_id`` is omitted, the resulting route will start at the first visited task, whose choice is determined by the optimization process."
+msgstr ""
+
+msgid "To request a round trip, specify both ``start_id`` and ``end_id`` as the same index."
+msgstr ""
+
+msgid "A vehicle is only allowed to serve a set of tasks if the resulting load at each route step is lower than the matching value in capacity for each metric. When using multiple components for amounts, it is recommended to put the most important/limiting metrics first."
+msgstr ""
+
+msgid "It is assumed that all delivery-related amounts for jobs are loaded at vehicle start, while all pickup-related amounts for jobs are brought back at vehicle end."
+msgstr ""
+
+msgid "Breaks SQL"
+msgstr ""
+
+msgid "``id, vehicle_id``"
+msgstr ""
+
+msgid "``[service, data]``"
+msgstr ""
+
+msgid "Positive unique identifier of the break.  Unique for the same vehicle."
+msgstr ""
+
+msgid "``vehicle_id``"
+msgstr ""
+
+msgid "The break duration"
+msgstr ""
+
+msgid "Any metadata information of the break."
+msgstr ""
+
+msgid "Breaks Time Windows SQL"
+msgstr ""
+
+msgid "Time Matrix SQL"
+msgstr ""
+
+msgid "``start_id, end_id, duration``"
+msgstr ""
+
+msgid "``[ cost]``"
+msgstr ""
+
+msgid "Identifier of the start node."
+msgstr ""
+
+msgid "Identifier of the end node."
+msgstr ""
+
+msgid "``duration``"
+msgstr ""
+
+msgid "Time to travel from ``start_id`` to ``end_id``"
+msgstr ""
+
+msgid "``cost``"
+msgstr ""
+
+msgid "Cost of travel from ``start_id`` to ``end_id``"
+msgstr ""
+
+msgid "Result Columns"
+msgstr ""
+
+msgid "Returns set of"
+msgstr ""
+
+msgid "``seq``"
+msgstr ""
+
+msgid "``BIGINT``"
+msgstr ""
+
+msgid "Sequential value starting from **1**."
+msgstr ""
+
+msgid "``vehicle_seq``"
+msgstr ""
+
+msgid "Sequential value starting from **1** for current vehicles.  The :math:`n^{th}` vehicle in the solution."
+msgstr ""
+
+msgid "Current vehicle identifier."
+msgstr ""
+
+msgid "``-1``: Vehicle denoting all the unallocated tasks."
+msgstr ""
+
+msgid "``0``: Summary row for the complete problem"
+msgstr ""
+
+msgid "``vehicle_data``"
+msgstr ""
+
+msgid "Metadata information of the vehicle."
+msgstr ""
+
+msgid "``step_seq``"
+msgstr ""
+
+msgid "Sequential value starting from **1** for the stops made by the current vehicle. The :math:`m^{th}` stop of the current vehicle."
+msgstr ""
+
+msgid "``0``: Summary row"
+msgstr ""
+
+msgid "``step_type``"
+msgstr ""
+
+msgid "Kind of the step location the vehicle is at:"
+msgstr ""
+
+msgid "``1``: Starting location"
+msgstr ""
+
+msgid "``2``: Job location"
+msgstr ""
+
+msgid "``3``: Pickup location"
+msgstr ""
+
+msgid "``4``: Delivery location"
+msgstr ""
+
+msgid "``5``: Break location"
+msgstr ""
+
+msgid "``6``: Ending location"
+msgstr ""
+
+msgid "``task_id``"
+msgstr ""
+
+msgid "Identifier of the task performed at this step."
+msgstr ""
+
+msgid "``-1``: If the step is starting/ending location."
+msgstr ""
+
+msgid "Identifier of the task location."
+msgstr ""
+
+msgid "``task_data``"
+msgstr ""
+
+msgid "Metadata information of the task."
+msgstr ""
+
+msgid "``arrival``"
+msgstr ""
+
+msgid "Estimated time of arrival at this step."
+msgstr ""
+
+msgid "``travel_time``"
+msgstr ""
+
+msgid "Travel time from previous ``step_seq`` to current ``step_seq``."
+msgstr ""
+
+msgid "``0``: When ``step_type = 1``"
+msgstr ""
+
+msgid "``setup_time``"
+msgstr ""
+
+msgid "Setup time at this step."
+msgstr ""
+
+msgid "``service_time``"
+msgstr ""
+
+msgid "Service time at this step."
+msgstr ""
+
+msgid "``waiting_time``"
+msgstr ""
+
+msgid "Waiting time at this step."
+msgstr ""
+
+msgid "``departure``"
+msgstr ""
+
+msgid "Estimated time of departure at this step."
+msgstr ""
+
+msgid ":math:`arrival + service\\_time + waiting\\_time`."
+msgstr ""
+
+msgid "``load``"
+msgstr ""
+
+msgid "Vehicle load after step completion (with capacity constraints)"
+msgstr ""
+
+msgid "Unallocated tasks are mentioned at the end with :code:`vehicle_id = -1`."
+msgstr ""
+
+msgid "The last step of every vehicle denotes the summary row, where the columns ``travel_time``, ``service_time`` and ``waiting_time`` denote the total time for the corresponding vehicle,"
+msgstr ""
+
+msgid "The last row denotes the summary for the complete problem, where the columns ``travel_time``, ``service_time`` and ``waiting_time`` denote the total time for the complete problem,"
+msgstr ""
+
+msgid "Additional Example"
+msgstr ""
+
+msgid "Problem involving 2 jobs, using a single vehicle, corresponding to the VROOM Documentation `Example 2 <https://github.com/VROOM-Project/vroom/blob/master/docs/example_2.json>`__."
+msgstr ""
+
+msgid "See Also"
+msgstr ""
+
+msgid ":doc:`concepts`"
+msgstr ""
+
+msgid "The queries use the :doc:`sampledata` network."
+msgstr ""
+
+msgid "`VROOM: Vehicle Routing Open-source Optimization Machine <https://github.com/VROOM-Project/vroom>`__"
+msgstr ""
+
+msgid "`VROOM API Documentation <https://github.com/VROOM-Project/vroom/blob/master/docs/API.md>`__"
+msgstr ""
+
+msgid "Indices and tables"
+msgstr ""
+
+msgid ":ref:`genindex`"
+msgstr ""
+
+msgid ":ref:`search`"
+msgstr ""

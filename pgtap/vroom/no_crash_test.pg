@@ -1,0 +1,184 @@
+BEGIN;
+SET client_min_messages TO ERROR;
+
+SELECT plan(116);
+
+CREATE OR REPLACE FUNCTION no_crash(is_plain BOOLEAN)
+RETURNS SETOF TEXT AS
+$BODY$
+DECLARE
+  params TEXT[];
+  subs TEXT[];
+  error_messages TEXT[];
+  non_empty_args INTEGER[];
+BEGIN
+
+  IF is_plain = TRUE THEN
+    SET search_path TO 'plain', 'public';
+  ELSE
+    SET search_path TO 'vroom', 'public';
+  END IF;
+
+  PREPARE jobs AS SELECT * FROM jobs;
+  PREPARE jobs_time_windows AS SELECT * FROM jobs_time_windows;
+  PREPARE shipments AS SELECT * FROM shipments;
+  PREPARE shipments_time_windows AS SELECT * FROM shipments_time_windows;
+  PREPARE vehicles AS SELECT * FROM vehicles;
+  PREPARE breaks AS SELECT * FROM breaks;
+  PREPARE breaks_time_windows AS SELECT * FROM breaks_time_windows;
+  PREPARE matrix AS SELECT * FROM matrix;
+
+  RETURN QUERY
+  SELECT isnt_empty('jobs', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('jobs_time_windows', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('shipments', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('shipments_time_windows', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('vehicles', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('breaks', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('breaks_time_windows', 'Should be not empty to tests be meaningful');
+  RETURN QUERY
+  SELECT isnt_empty('matrix', 'Should be not empty to tests be meaningful');
+
+  params = ARRAY[
+    '$$jobs$$',
+    '$$jobs_time_windows$$',
+    '$$shipments$$',
+    '$$shipments_time_windows$$',
+    '$$vehicles$$',
+    '$$breaks$$',
+    '$$breaks_time_windows$$',
+    '$$matrix$$',
+    'exploration_level => 5',
+    'timeout => -1'
+  ]::TEXT[];
+  subs = ARRAY[
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'exploration_level => NULL',
+    'timeout => NULL'
+  ]::TEXT[];
+  error_messages = ARRAY[
+    '',
+    '',
+    '',
+    '',
+    'Vehicles SQL must not be NULL',
+    '',
+    '',
+    'Matrix SQL must not be NULL',
+    '',
+    ''
+  ]::TEXT[];
+  non_empty_args = ARRAY[0, 1, 2, 3, 4, 6, 7, 9, 10]::INTEGER[];
+
+  IF is_plain = TRUE THEN
+    params[10] = 'timeout => -1';
+    RETURN query SELECT * FROM no_crash_test('vro_vroomPlain', params, subs, error_messages, non_empty_args);
+  ELSE
+    params[10] = 'timeout => $$-00:00:01$$::INTERVAL';
+    RETURN query SELECT * FROM no_crash_test('vro_vroom', params, subs, error_messages, non_empty_args);
+  END IF;
+
+  params = ARRAY[
+    '$$jobs$$',
+    '$$jobs_time_windows$$',
+    '$$vehicles$$',
+    '$$breaks$$',
+    '$$breaks_time_windows$$',
+    '$$matrix$$',
+    'exploration_level => 5',
+    'timeout => -1'
+  ]::TEXT[];
+  subs = ARRAY[
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'exploration_level => NULL',
+    'timeout => NULL'
+  ]::TEXT[];
+  error_messages = ARRAY[
+    'Jobs SQL must not be NULL',
+    '',
+    'Vehicles SQL must not be NULL',
+    '',
+    '',
+    'Matrix SQL must not be NULL',
+    '',
+    ''
+  ]::TEXT[];
+  non_empty_args = ARRAY[0, 2, 4, 5, 7, 8]::INTEGER[];
+
+  IF is_plain = TRUE THEN
+    params[8] = 'timeout => -1';
+    RETURN query SELECT * FROM no_crash_test('vro_vroomJobsPlain', params, subs, error_messages, non_empty_args);
+  ELSE
+    params[8] = 'timeout => $$-00:00:01$$::INTERVAL';
+    RETURN query SELECT * FROM no_crash_test('vro_vroomJobs', params, subs, error_messages, non_empty_args);
+  END IF;
+
+  params = ARRAY[
+    '$$shipments$$',
+    '$$shipments_time_windows$$',
+    '$$vehicles$$',
+    '$$breaks$$',
+    '$$breaks_time_windows$$',
+    '$$matrix$$',
+    'exploration_level => 5',
+    'timeout => -1'
+  ]::TEXT[];
+  subs = ARRAY[
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'NULL',
+    'exploration_level => NULL',
+    'timeout => NULL'
+  ]::TEXT[];
+  error_messages = ARRAY[
+    'Shipments SQL must not be NULL',
+    '',
+    'Vehicles SQL must not be NULL',
+    '',
+    '',
+    'Matrix SQL must not be NULL',
+    '',
+    ''
+  ]::TEXT[];
+  non_empty_args = ARRAY[0, 2, 4, 5, 7, 8]::INTEGER[];
+
+  IF is_plain = TRUE THEN
+    params[8] = 'timeout => -1';
+    RETURN query SELECT * FROM no_crash_test('vro_vroomShipmentsPlain', params, subs, error_messages, non_empty_args);
+  ELSE
+    params[8] = 'timeout => $$-00:00:01$$::INTERVAL';
+    RETURN query SELECT * FROM no_crash_test('vro_vroomShipments', params, subs, error_messages, non_empty_args);
+  END IF;
+
+  DEALLOCATE ALL;
+
+END
+$BODY$
+LANGUAGE plpgsql VOLATILE;
+
+
+SELECT * FROM no_crash(is_plain => TRUE);
+SELECT * FROM no_crash(is_plain => FALSE);
+
+ROLLBACK;

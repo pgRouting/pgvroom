@@ -1,0 +1,26 @@
+BEGIN;
+BEGIN
+SET client_min_messages TO NOTICE;
+SET
+SET search_path TO 'example2', 'public';
+SET
+SELECT count(*) FROM example2.shipments;
+ERROR:  relation "example2.shipments" does not exist
+LINE 1: SELECT count(*) FROM example2.shipments;
+                             ^
+SELECT count(*) FROM example2.physical_vehicles;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT count(*) FROM example2.vehicles;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT count(*) FROM example2.depot;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT count(*) FROM example2.locations;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT count(*) FROM example2.timeMatrix;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT count(*) FROM example2.timeMatrix WHERE assigned;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+SELECT count(*) FROM example2.timeMatrix WHERE NOT assigned;
+ERROR:  current transaction is aborted, commands ignored until end of transaction block
+ROLLBACK;
+ROLLBACK

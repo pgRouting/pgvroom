@@ -1,0 +1,14 @@
+BEGIN;
+BEGIN
+SET client_min_messages TO NOTICE;
+SET
+/* -- q1 */
+SELECT version, library FROM vro_full_version();
+ version |    library
+---------+---------------
+ 0.1.0   | pgvroom-0.1.0
+(1 row)
+
+/* -- q2 */
+ROLLBACK;
+ROLLBACK

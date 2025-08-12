@@ -1,0 +1,818 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) pgvroom Contributors - Version 0.1
+# This file is distributed under the same license as the pgvroom package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pgvroom 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 12:40-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+msgid "Concepts"
+msgstr ""
+
+msgid "Contents"
+msgstr ""
+
+msgid ""
+"VROOM is an open-source optimization engine that aims at providing good "
+"solutions to various real-life vehicle routing problems (VRP) within a "
+"small computing time."
+msgstr ""
+
+msgid ""
+"VROOM can solve several well-known types of vehicle routing problems "
+"(VRP)."
+msgstr ""
+
+msgid "TSP (travelling salesman problem)"
+msgstr ""
+
+msgid "CVRP (capacitated VRP)"
+msgstr ""
+
+msgid "VRPTW (VRP with time windows)"
+msgstr ""
+
+msgid "MDHVRPTW (multi-depot heterogeneous vehicle VRPTW)"
+msgstr ""
+
+msgid "PDPTW (pickup-and-delivery problem with TW)"
+msgstr ""
+
+msgid "VROOM can also solve any mix of the above problem types."
+msgstr ""
+
+msgid ""
+"`VROOM: Vehicle Routing Open-source Optimization Machine "
+"<https://github.com/VROOM-Project/vroom>`__"
+msgstr ""
+
+msgid ""
+"`VROOM API Documentation <https://github.com/VROOM-"
+"Project/vroom/blob/master/docs/API.md>`__"
+msgstr ""
+
+msgid "Characteristics"
+msgstr ""
+
+msgid ""
+"VROOM models a Vehicle Routing Problem with ``vehicles``, ``jobs`` and "
+"``shipments``."
+msgstr ""
+
+msgid ""
+"The **vehicles** denote the resources that pick and/or deliver the jobs "
+"and shipments. They are characterised by:"
+msgstr ""
+
+msgid "Capacity on arbitrary number of metrics"
+msgstr ""
+
+msgid "Skills"
+msgstr ""
+
+msgid "Working hours"
+msgstr ""
+
+msgid "Driver breaks"
+msgstr ""
+
+msgid "Start and end defined on a per-vehicle basis"
+msgstr ""
+
+msgid "Start and end can be different"
+msgstr ""
+
+msgid "Open trip optimization (only start or only end defined)"
+msgstr ""
+
+msgid ""
+"The **jobs** denote the single-location pickup and/or delivery tasks, and"
+" the **shipments** denote the pickup-and-delivery tasks that should "
+"happen within the same route. They are characterised by:"
+msgstr ""
+
+msgid "Delivery/pickup amounts on arbitrary number of metrics"
+msgstr ""
+
+msgid "Service time windows"
+msgstr ""
+
+msgid "Service duration"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Terminologies"
+msgstr ""
+
+msgid "**Tasks**: Either jobs or shipments are referred to as tasks."
+msgstr ""
+
+msgid ""
+"**Skills**: Every task and vehicle may have some set of skills. A task "
+"can be served by only that vehicle which has all the skills of the task."
+msgstr ""
+
+msgid ""
+"**Priority**: Tasks may have some priority assigned, which is useful when"
+" all tasks cannot be performed due to constraints, so the tasks with low "
+"priority are left unassigned."
+msgstr ""
+
+msgid ""
+"**Amount (for shipment), Pickup and delivery (for job)**: They denote the"
+" multidimensional quantities such as number of items, weights, volume, "
+"etc."
+msgstr ""
+
+msgid ""
+"**Capacity (for vehicle)**: Every vehicle may have some capacity, "
+"denoting the multidimensional quantities. A vehicle can serve only those "
+"sets of tasks such that the total sum of the quantity does not exceed the"
+" vehicle capacity, at any point of the route."
+msgstr ""
+
+msgid ""
+"**Time Window**: An interval of time during which some activity can be "
+"performed, such as working hours of the vehicle, break of the vehicle, or"
+" service start time for a task."
+msgstr ""
+
+msgid ""
+"**Break**: Array of time windows, denoting valid slots for the break "
+"start of a vehicle."
+msgstr ""
+
+msgid ""
+"**Setup time**: Setup times serve as a mean to describe the time it takes"
+" to get started for a task at a given location. This models a duration "
+"that should not be re-applied for other tasks following at the same "
+"place. So the total \"action time\" for a task is ``setup + service`` "
+"upon arriving at a new location or ``service`` only if performing a new "
+"task at the previous vehicle location."
+msgstr ""
+
+msgid ""
+"**Service time**: The additional time to be spent by a vehicle while "
+"serving a task."
+msgstr ""
+
+msgid "**Travel time**: The total time the vehicle travels during its route."
+msgstr ""
+
+msgid ""
+"**Waiting time**: The total time the vehicle is idle, i.e. it is neither "
+"traveling nor servicing any task. It is generally the time spent by a "
+"vehicle waiting for a task service to open."
+msgstr ""
+
+msgid "Getting Started"
+msgstr ""
+
+msgid ""
+"This is a simple guide to walk you through the steps of getting started "
+"with pgvroom. In this guide we will cover:"
+msgstr ""
+
+msgid "Inner Queries"
+msgstr ""
+
+msgid ""
+"Vroom, because of the data types used internally, some maximum values "
+"apply."
+msgstr ""
+
+msgid "For ``TIMESTAMP``:"
+msgstr ""
+
+msgid "For ``INTERVAL``:"
+msgstr ""
+
+msgid "Jobs SQL"
+msgstr ""
+
+msgid "A ``SELECT`` statement that returns the following columns:"
+msgstr ""
+
+msgid "``id, location_id``"
+msgstr ""
+
+msgid "``[setup, service, delivery, pickup, skills, priority, data]``"
+msgstr ""
+
+msgid "Maximum values apply from vroom"
+msgstr ""
+
+msgid "``setup`` and ``service``"
+msgstr ""
+
+msgid "|intervalmax|"
+msgstr ""
+
+msgid "``skills``"
+msgstr ""
+
+msgid ":math:`2147483647`"
+msgstr ""
+
+msgid "``priority``"
+msgstr ""
+
+msgid ":math:`100`"
+msgstr ""
+
+msgid "Column"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "``id``"
+msgstr ""
+
+msgid "|ANY-INTEGER|"
+msgstr ""
+
+msgid "Positive unique identifier of the job."
+msgstr ""
+
+msgid "``location_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the location of the job."
+msgstr ""
+
+msgid "``setup``"
+msgstr ""
+
+msgid "|interval|"
+msgstr ""
+
+msgid "|interval0|"
+msgstr ""
+
+msgid "The Job setup duration."
+msgstr ""
+
+msgid "``service``"
+msgstr ""
+
+msgid "The Job service duration. Max value:"
+msgstr ""
+
+msgid "``pickup``"
+msgstr ""
+
+msgid "``ARRAY[ANY-INTEGER]``"
+msgstr ""
+
+msgid "``[]``"
+msgstr ""
+
+msgid ""
+"Array of non-negative integers describing multidimensional quantities for"
+" pickup such as number of items, weight, volume etc."
+msgstr ""
+
+msgid "All jobs must have the same value of :code:`array_length(pickup, 1)`"
+msgstr ""
+
+msgid "``delivery``"
+msgstr ""
+
+msgid ""
+"Array of non-negative integers describing multidimensional quantities for"
+" delivery such as number of items, weight, volume etc."
+msgstr ""
+
+msgid "All jobs must have the same value of :code:`array_length(delivery, 1)`"
+msgstr ""
+
+msgid "Array of non-negative integers defining mandatory skills."
+msgstr ""
+
+msgid "``INTEGER``"
+msgstr ""
+
+msgid ":math:`0`"
+msgstr ""
+
+msgid "Value range: :math:`[0, 100]`"
+msgstr ""
+
+msgid "``data``"
+msgstr ""
+
+msgid "``JSONB``"
+msgstr ""
+
+#, python-brace-format
+msgid "``'{}'::JSONB``"
+msgstr ""
+
+msgid "Any metadata information of the job."
+msgstr ""
+
+msgid "Shipments SQL"
+msgstr ""
+
+msgid "``p_location_id, [p_setup, p_service, p_data]``"
+msgstr ""
+
+msgid "``d_location_id, [d_setup, d_service, d_data]``"
+msgstr ""
+
+msgid "``[amount, skills, priority]``"
+msgstr ""
+
+msgid "``p_setup``, ``p_service``, ``d_setup``, ``d_service``"
+msgstr ""
+
+msgid "Positive unique identifier of the shipment."
+msgstr ""
+
+msgid "``p_location_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the pickup location."
+msgstr ""
+
+msgid "``p_setup``"
+msgstr ""
+
+msgid "The pickup setup duration"
+msgstr ""
+
+msgid "``p_service``"
+msgstr ""
+
+msgid "The pickup service duration"
+msgstr ""
+
+msgid "``p_data``"
+msgstr ""
+
+msgid "Any metadata information of the pickup."
+msgstr ""
+
+msgid "``d_location_id``"
+msgstr ""
+
+msgid "``d_setup``"
+msgstr ""
+
+msgid "``d_service``"
+msgstr ""
+
+msgid "``d_data``"
+msgstr ""
+
+msgid "Any metadata information of the delivery."
+msgstr ""
+
+msgid "``amount``"
+msgstr ""
+
+msgid ""
+"Array of non-negative integers describing multidimensional quantities "
+"such as number of items, weight, volume etc."
+msgstr ""
+
+msgid "All shipments must have the same value of :code:`array_length(amount, 1)`"
+msgstr ""
+
+msgid ":math:`values \\leq 2147483647`"
+msgstr ""
+
+msgid "Vehicles SQL"
+msgstr ""
+
+msgid "``id, start_id, end_id``"
+msgstr ""
+
+msgid "``[capacity, skills, tw_open, tw_close, speed_factor, max_tasks, data]``"
+msgstr ""
+
+msgid "Positive unique identifier of the vehicle."
+msgstr ""
+
+msgid "``start_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the start location."
+msgstr ""
+
+msgid "``end_id``"
+msgstr ""
+
+msgid "Positive unique identifier of the end location."
+msgstr ""
+
+msgid "``capacity``"
+msgstr ""
+
+msgid "All vehicles must have the same value of :code:`array_length(capacity, 1)`"
+msgstr ""
+
+msgid "``tw_open``"
+msgstr ""
+
+msgid "|timestamp|"
+msgstr ""
+
+msgid "|tw_open_default|"
+msgstr ""
+
+msgid "Time window opening time."
+msgstr ""
+
+msgid ":code:`tw_open \\leq tw_close`"
+msgstr ""
+
+msgid "``tw_close``"
+msgstr ""
+
+msgid "|tw_close_default|"
+msgstr ""
+
+msgid "Time window closing time."
+msgstr ""
+
+msgid "``speed_factor``"
+msgstr ""
+
+msgid "|ANY-NUMERICAL|"
+msgstr ""
+
+msgid ":math:`1.0`"
+msgstr ""
+
+msgid "Vehicle travel time multiplier."
+msgstr ""
+
+msgid ""
+"Max value of speed factor for a vehicle shall not be greater than 5 times"
+" the speed factor of any other vehicle."
+msgstr ""
+
+msgid "``max_tasks``"
+msgstr ""
+
+msgid "Maximum number of tasks in a route for the vehicle."
+msgstr ""
+
+msgid "A job, pickup, or delivery is counted as a single task."
+msgstr ""
+
+msgid "Any metadata information of the vehicle."
+msgstr ""
+
+msgid "**Note**:"
+msgstr ""
+
+msgid "At least one of the ``start_id`` or ``end_id`` shall be present."
+msgstr ""
+
+msgid ""
+"If ``end_id`` is omitted, the resulting route will stop at the last "
+"visited task, whose choice is determined by the optimization process."
+msgstr ""
+
+msgid ""
+"If ``start_id`` is omitted, the resulting route will start at the first "
+"visited task, whose choice is determined by the optimization process."
+msgstr ""
+
+msgid ""
+"To request a round trip, specify both ``start_id`` and ``end_id`` as the "
+"same index."
+msgstr ""
+
+msgid ""
+"A vehicle is only allowed to serve a set of tasks if the resulting load "
+"at each route step is lower than the matching value in capacity for each "
+"metric. When using multiple components for amounts, it is recommended to "
+"put the most important/limiting metrics first."
+msgstr ""
+
+msgid ""
+"It is assumed that all delivery-related amounts for jobs are loaded at "
+"vehicle start, while all pickup-related amounts for jobs are brought back"
+" at vehicle end."
+msgstr ""
+
+msgid "Vroom Matrix SQL"
+msgstr ""
+
+msgid "``start_id, end_id, duration``"
+msgstr ""
+
+msgid "``[ cost]``"
+msgstr ""
+
+msgid "Identifier of the start node."
+msgstr ""
+
+msgid "Identifier of the end node."
+msgstr ""
+
+msgid "``duration``"
+msgstr ""
+
+msgid "Time to travel from ``start_id`` to ``end_id``"
+msgstr ""
+
+msgid "``cost``"
+msgstr ""
+
+msgid "Cost of travel from ``start_id`` to ``end_id``"
+msgstr ""
+
+msgid "Breaks SQL"
+msgstr ""
+
+msgid "``id, vehicle_id``"
+msgstr ""
+
+msgid "``[service, data]``"
+msgstr ""
+
+msgid "Positive unique identifier of the break.  Unique for the same vehicle."
+msgstr ""
+
+msgid "``vehicle_id``"
+msgstr ""
+
+msgid "The break duration"
+msgstr ""
+
+msgid "Any metadata information of the break."
+msgstr ""
+
+msgid "Time Windows SQL"
+msgstr ""
+
+msgid "Shipment Time Windows SQL"
+msgstr ""
+
+msgid "``id, tw_open, tw_close``"
+msgstr ""
+
+msgid "``[kind]``"
+msgstr ""
+
+msgid ""
+"Positive unique identifier of the: job, pickup/delivery shipment, or "
+"break."
+msgstr ""
+
+msgid "``kind``"
+msgstr ""
+
+msgid "``CHAR``"
+msgstr ""
+
+msgid "Value in ['p', 'd'] indicating whether the time window is for:"
+msgstr ""
+
+msgid "Pickup shipment, or"
+msgstr ""
+
+msgid "Delivery shipment."
+msgstr ""
+
+msgid "General Time Windows SQL"
+msgstr ""
+
+msgid "All timings are in **seconds** when represented as an ``INTEGER``."
+msgstr ""
+
+msgid "Every row must satisfy the condition: :code:`tw_open ≤ tw_close`."
+msgstr ""
+
+msgid "Time windows can be interpreted by the users:"
+msgstr ""
+
+msgid "**Relative values**, e.g."
+msgstr ""
+
+msgid "Let the beginning of the planning horizon :math:`0`."
+msgstr ""
+
+msgid ""
+"for a 4 hour time window (:math:`4 * 3600 = 14400` seconds) starting from"
+" the planning horizon"
+msgstr ""
+
+msgid "``tw_open`` = :math:`0`"
+msgstr ""
+
+msgid "``tw_close`` = :math:`14400`"
+msgstr ""
+
+msgid "Times reported in output relative to the start of the planning horizon."
+msgstr ""
+
+msgid "**Absolute values**,"
+msgstr ""
+
+msgid "Let the beginning of the planning horizon ``2019-07-30 08:00:00``"
+msgstr ""
+
+msgid "for a 4 hour time window starting from the planning horizon"
+msgstr ""
+
+msgid "``tw_open`` = ``2019-07-30 08:00:00``"
+msgstr ""
+
+msgid "``tw_close`` = ``2019-07-30 12:00:00``"
+msgstr ""
+
+msgid "Times reported in output can be interpreted as ``TIMESTAMP``."
+msgstr ""
+
+msgid "Return columns & values"
+msgstr ""
+
+msgid "Returns set of"
+msgstr ""
+
+msgid "``seq``"
+msgstr ""
+
+msgid "``BIGINT``"
+msgstr ""
+
+msgid "Sequential value starting from **1**."
+msgstr ""
+
+msgid "``vehicle_seq``"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Sequential value starting from **1** for current vehicles.  The "
+":math:`n^{th}` vehicle in the solution."
+msgstr ""
+
+msgid "Current vehicle identifier."
+msgstr ""
+
+msgid "``-1``: Vehicle denoting all the unallocated tasks."
+msgstr ""
+
+msgid "``0``: Summary row for the complete problem"
+msgstr ""
+
+msgid "``vehicle_data``"
+msgstr ""
+
+msgid "Metadata information of the vehicle."
+msgstr ""
+
+msgid "``step_seq``"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Sequential value starting from **1** for the stops made by the current "
+"vehicle. The :math:`m^{th}` stop of the current vehicle."
+msgstr ""
+
+msgid "``0``: Summary row"
+msgstr ""
+
+msgid "``step_type``"
+msgstr ""
+
+msgid "Kind of the step location the vehicle is at:"
+msgstr ""
+
+msgid "``1``: Starting location"
+msgstr ""
+
+msgid "``2``: Job location"
+msgstr ""
+
+msgid "``3``: Pickup location"
+msgstr ""
+
+msgid "``4``: Delivery location"
+msgstr ""
+
+msgid "``5``: Break location"
+msgstr ""
+
+msgid "``6``: Ending location"
+msgstr ""
+
+msgid "``task_id``"
+msgstr ""
+
+msgid "Identifier of the task performed at this step."
+msgstr ""
+
+msgid "``-1``: If the step is starting/ending location."
+msgstr ""
+
+msgid "Identifier of the task location."
+msgstr ""
+
+msgid "``task_data``"
+msgstr ""
+
+msgid "Metadata information of the task."
+msgstr ""
+
+msgid "``arrival``"
+msgstr ""
+
+msgid "Estimated time of arrival at this step."
+msgstr ""
+
+msgid "``travel_time``"
+msgstr ""
+
+msgid "Travel time from previous ``step_seq`` to current ``step_seq``."
+msgstr ""
+
+msgid "``0``: When ``step_type = 1``"
+msgstr ""
+
+msgid "``setup_time``"
+msgstr ""
+
+msgid "Setup time at this step."
+msgstr ""
+
+msgid "``service_time``"
+msgstr ""
+
+msgid "Service time at this step."
+msgstr ""
+
+msgid "``waiting_time``"
+msgstr ""
+
+msgid "Waiting time at this step."
+msgstr ""
+
+msgid "``departure``"
+msgstr ""
+
+msgid "Estimated time of departure at this step."
+msgstr ""
+
+msgid ":math:`arrival + service\\_time + waiting\\_time`."
+msgstr ""
+
+msgid "``load``"
+msgstr ""
+
+msgid "Vehicle load after step completion (with capacity constraints)"
+msgstr ""
+
+msgid "Unallocated tasks are mentioned at the end with :code:`vehicle_id = -1`."
+msgstr ""
+
+msgid ""
+"The last step of every vehicle denotes the summary row, where the columns"
+" ``travel_time``, ``service_time`` and ``waiting_time`` denote the total "
+"time for the corresponding vehicle,"
+msgstr ""
+
+msgid ""
+"The last row denotes the summary for the complete problem, where the "
+"columns ``travel_time``, ``service_time`` and ``waiting_time`` denote the"
+" total time for the complete problem,"
+msgstr ""
+
+msgid "Indices and tables"
+msgstr ""
+
+msgid ":ref:`genindex`"
+msgstr ""
+
+msgid ":ref:`search`"
+msgstr ""
+

@@ -1,41 +1,14 @@
-# Prerequisites
-*.d
+# default build directory
+build
+fix_typos
+code_linter
+src/version/_version.h
+vroom-v[0-9]*
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# files are ignored on gh-pages
+doxy
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+.DS_Store
+.vagrant
+.directory
+*.swp
